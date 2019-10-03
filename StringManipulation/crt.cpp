@@ -18,6 +18,12 @@ char mytoupper(char ch)
 
 void* mymemcpy(void* src_, void* dst_, unsigned int count)
 {
+	for (int i = 0; i <= count; i++)
+	{
+		char srcChar = ((char*)src_)[i];
+		((char*)dst_)[i] = srcChar;
+	}
+
 	return nullptr;
 }
 

@@ -26,5 +26,8 @@
     <ClInclude Include="crt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="StringManipulation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
