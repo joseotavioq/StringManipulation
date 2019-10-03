@@ -2,12 +2,18 @@
 
 char mytolower(char ch)
 {
-	return 0;
+	if (ch >= 65 && ch <= 90)
+		return ch + 32;
+	else
+		return ch;
 }
 
 char mytoupper(char ch)
 {
-	return 0;
+	if (ch >= 97 && ch <= 122)
+		return ch - 32;
+	else
+		return ch;
 }
 
 void* mymemcpy(void* src_, void* dst_, unsigned int count)

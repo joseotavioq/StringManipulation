@@ -1,5 +1,6 @@
 /*
 	CRT fundamental functions by Miguel Lacouture.
+	CRT = C Run-Time
 */
 
 #include <stdio.h>
