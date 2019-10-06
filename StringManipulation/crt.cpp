@@ -57,7 +57,13 @@ void* mymemmove(void* src_, void* dst_, unsigned int count)
 
 void* mymemset(void* dest, char c, unsigned count)
 {
-	return nullptr;
+	for (size_t i = 0; i < count; i++)
+	{
+		char* dstChar = (char*)dest + i;
+		*dstChar = c;
+	}
+
+	return dest;
 }
 
 char* mystrncpy(char* dst, const char* src, unsigned int count)
