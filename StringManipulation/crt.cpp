@@ -1,4 +1,5 @@
 #include "crt.h"
+#include <stdlib.h>
 
 char mytolower(char ch)
 {
@@ -22,7 +23,6 @@ void* mymemcpy(void* src_, void* dst_, unsigned int count)
 	{
 		char* srcChar = (char*)src_ + i;
 		char* dstChar = (char*)dst_ + i;
-
 		*dstChar = *srcChar;
 	}
 
@@ -31,7 +31,28 @@ void* mymemcpy(void* src_, void* dst_, unsigned int count)
 
 void* mymemmove(void* src_, void* dst_, unsigned int count)
 {
-	return nullptr;
+	void *tmp = malloc(sizeof(char) * count);
+
+	if (tmp != NULL)
+	{
+		for (size_t i = 0; i < count; i++)
+		{
+			char* srcChar = (char*)src_ + i;
+			char* tmpChar = (char*)tmp + i;
+			*tmpChar = *srcChar;
+		}
+
+		for (size_t i = 0; i < count; i++)
+		{
+			char* tmpChar = (char*)tmp + i;
+			char* dstChar = (char*)dst_ + i;
+			*dstChar = *tmpChar;
+		}
+
+		free(tmp);
+	}
+
+	return dst_;
 }
 
 void* mymemset(void* dest, char c, unsigned count)

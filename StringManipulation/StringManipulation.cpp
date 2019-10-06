@@ -4,4 +4,7 @@
 
 int main()
 {
+	char str[] = "abc def ghi jkl mno";
+
+	mymemmove(str + 4, str + 8, 11);
 }
