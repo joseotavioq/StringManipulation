@@ -31,7 +31,7 @@ void* mymemcpy(void* src_, void* dst_, unsigned int count)
 
 void* mymemmove(void* src_, void* dst_, unsigned int count)
 {
-	void *tmp = malloc(sizeof(char) * count);
+	void* tmp = malloc(sizeof(char) * count);
 
 	if (tmp != NULL)
 	{
@@ -68,7 +68,28 @@ void* mymemset(void* dest, char c, unsigned count)
 
 char* mystrncpy(char* dst, const char* src, unsigned int count)
 {
-	return nullptr;
+	bool foundTheEndOfString = false;
+	for (size_t i = 0; i < count; i++)
+	{
+		char* srcChar = (char*)src + i;
+		char* dstChar = (char*)dst + i;
+
+		if (*srcChar == '\0')
+		{
+			*dstChar = '\0';
+			foundTheEndOfString = true;
+		}
+		else if (foundTheEndOfString)
+		{
+			*dstChar = '0';
+		}
+		else
+		{
+			*dstChar = *srcChar;
+		}
+	}
+
+	return dst;
 }
 
 int mystrncmp(const char* str1, const char* str2, unsigned int count)
