@@ -50,6 +50,16 @@ namespace StringManipulationTest
 			Assert::AreEqual(0, result);
 		}
 
+		TEST_METHOD(End_Of_String_Reached_With_Different_Count_Of_Characters)
+		{
+			char str[] = "abc";
+			char str1[] = "ab";
+
+			int result = mystrncmp(str, str1, 4);
+
+			Assert::AreEqual(1, result);
+		}
+
 		TEST_METHOD(The_Last_Character_Is_Different)
 		{
 			char str[] = "abcd";
