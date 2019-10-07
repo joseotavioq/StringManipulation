@@ -94,6 +94,25 @@ char* mystrncpy(char* dst, const char* src, unsigned int count)
 
 int mystrncmp(const char* str1, const char* str2, unsigned int count)
 {
+	for (size_t i = 0; i < count; i++)
+	{
+		char* currentCharFirst = (char*)str1 + i;
+		char* currentCharSecond = (char*)str2 + i;
+
+		if (*currentCharFirst > *currentCharSecond)
+		{
+			return 1;
+		}
+		else if (*currentCharFirst < *currentCharSecond)
+		{
+			return -1;
+		}
+		else if (*currentCharFirst == '\0' || *currentCharSecond == '\0')
+		{
+			return 0;
+		}
+	}
+
 	return 0;
 }
 
