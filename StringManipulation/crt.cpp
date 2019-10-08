@@ -172,7 +172,15 @@ unsigned int mystrlen(char const* str)
 
 char* mystrcpy(char* dst, const char* src)
 {
-	return nullptr;
+	do
+	{
+		char* srcChar = (char*)src;
+		char* dstChar = dst;
+		*dstChar = *srcChar;
+		dst++;
+	} while ((*(src++) != '\0'));
+
+	return dst;
 }
 
 int mystrcmp(const char* str1, const char* str2)
