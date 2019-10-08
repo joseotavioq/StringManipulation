@@ -114,10 +114,7 @@ int mystrncmp(const char* str1, const char* str2, unsigned int count)
 
 char* mystrncat(char* dst, char const* src, unsigned int count)
 {
-	size_t dstLength = 0;
-
-	while (*(dst + dstLength) != '\0')
-		dstLength++;
+	unsigned int dstLength = mystrlen(dst);
 
 	void* tmp = malloc(sizeof(char) * dstLength);
 
@@ -165,7 +162,12 @@ char* mystrncat(char* dst, char const* src, unsigned int count)
 
 unsigned int mystrlen(char const* str)
 {
-	return 0;
+	int length = 0;
+
+	while (*(str + length) != '\0')
+		length++;
+
+	return length;
 }
 
 char* mystrcpy(char* dst, const char* src)
