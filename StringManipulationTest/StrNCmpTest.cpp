@@ -57,7 +57,7 @@ namespace StringManipulationTest
 
 			int result = mystrncmp(str, str1, 4);
 
-			Assert::AreEqual(1, result);
+			Assert::AreEqual(99, result);
 		}
 
 		TEST_METHOD(The_Last_Character_Is_Different)

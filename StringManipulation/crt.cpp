@@ -99,13 +99,9 @@ int mystrncmp(const char* str1, const char* str2, unsigned int count)
 		char* currentCharFirst = (char*)str1 + i;
 		char* currentCharSecond = (char*)str2 + i;
 
-		if (*currentCharFirst > *currentCharSecond)
+		if (*currentCharFirst > * currentCharSecond || *currentCharFirst < *currentCharSecond)
 		{
-			return 1;
-		}
-		else if (*currentCharFirst < *currentCharSecond)
-		{
-			return -1;
+			return *currentCharFirst - *currentCharSecond;
 		}
 		else if (*currentCharFirst == '\0' || *currentCharSecond == '\0')
 		{
@@ -118,6 +114,52 @@ int mystrncmp(const char* str1, const char* str2, unsigned int count)
 
 char* mystrncat(char* dst, char const* src, unsigned int count)
 {
+	size_t dstLength = 0;
+
+	while (*(dst + dstLength) != '\0')
+		dstLength++;
+
+	void* tmp = malloc(sizeof(char) * dstLength);
+
+	if (tmp != NULL)
+	{
+		for (size_t i = 0; i < dstLength; i++)
+		{
+			char* dstChar = (char*)dst + i;
+			char* tmpChar = (char*)tmp + i;
+			*tmpChar = *dstChar;
+		}
+
+		unsigned int countOfItensOnSource = 0;
+		for (size_t i = 0; i < count; i++)
+		{
+			char* srcChar = (char*)src + i;
+
+			if (*srcChar == '\0')
+				break;
+
+			char* dstChar = (char*)dst + i;
+			*dstChar = *srcChar;
+
+			countOfItensOnSource++;
+		}
+
+		unsigned int t = 0;
+		for (size_t i = countOfItensOnSource; i < dstLength; i++)
+		{
+			char* tmpChar = (char*)tmp + t;
+			char* dstChar = (char*)dst + i;
+			*dstChar = *tmpChar;
+			t++;
+		}
+
+		*((char*)dst + dstLength) = '\0';
+
+		free(tmp);
+
+		return dst;
+	}
+
 	return nullptr;
 }
 
