@@ -185,6 +185,19 @@ char* mystrcpy(char* dst, const char* src)
 
 int mystrcmp(const char* str1, const char* str2)
 {
+	do
+	{
+		char* currentCharFirst = (char*)str1;
+		char* currentCharSecond = (char*)str2;
+
+		if (*currentCharFirst > * currentCharSecond || *currentCharFirst < *currentCharSecond)
+		{
+			return *currentCharFirst - *currentCharSecond;
+		}
+
+		str2++;
+	} while ((*(str1++) != '\0'));
+
 	return 0;
 }
 
