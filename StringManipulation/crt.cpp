@@ -224,7 +224,19 @@ int mystricmp(const char* str1, const char* str2)
 
 char* mystrcat(char* dst, const char* src)
 {
-	return nullptr;
+	unsigned int dstLength = mystrlen(dst);
+
+	char* startAtChar = (char*)dst + dstLength;
+
+	do {
+		char* srcChar = (char*)src;
+		char* dstChar = startAtChar;
+		*dstChar = *srcChar;
+
+		startAtChar++;
+	} while ((*(src++) != '\0'));
+
+	return dst;
 }
 
 char* mystrstr(const char* str1, const char* str2)

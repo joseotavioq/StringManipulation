@@ -12,22 +12,22 @@ namespace StringManipulationTest
 
 		TEST_METHOD(Cat_Two_Strings)
 		{
-			char src[] = "To be ";
-			char dst[] = "or not to be";
+			char str1[] = "To be ";
+			char str2[] = "or not to be";
 
-			mystrncat(dst, src, 6);
-
-			Assert::AreEqual("To be or not", dst);
+			mystrncat(str2, str1, 6);
+			
+			Assert::AreEqual("To be or not", str2);
 		}
 
 		TEST_METHOD(Source_Is_Less_Than_Count)
 		{
-			char src[] = "To be ";
-			char dst[] = "or not to be";
+			char str1[] = "To be ";
+			char str2[] = "or not to be";
 
-			mystrncat(dst, src, 8);
+			mystrncat(str2, str1, 8);
 
-			Assert::AreEqual("To be or not", dst);
+			Assert::AreEqual("To be or not", str2);
 		}
 	};
 }
