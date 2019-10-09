@@ -172,6 +172,7 @@
     </ClCompile>
     <ClCompile Include="StrCmpTest.cpp" />
     <ClCompile Include="StrCpyTest.cpp" />
+    <ClCompile Include="StrICmpTest.cpp" />
     <ClCompile Include="StrLenTest.cpp" />
     <ClCompile Include="StrNCatTest.cpp" />
     <ClCompile Include="StrNCmpTest.cpp" />

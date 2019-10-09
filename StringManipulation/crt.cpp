@@ -203,6 +203,22 @@ int mystrcmp(const char* str1, const char* str2)
 
 int mystricmp(const char* str1, const char* str2)
 {
+	do
+	{
+		char* currentCharFirst = (char*)str1;
+		char* currentCharSecond = (char*)str2;
+
+		char first = mytolower(*currentCharFirst);
+		char second = mytolower(*currentCharSecond);
+
+		if (first > second || first < second)
+		{
+			return first - second;
+		}
+
+		str2++;
+	} while ((*(str1++) != '\0'));
+
 	return 0;
 }
 
