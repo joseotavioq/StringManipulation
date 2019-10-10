@@ -16,8 +16,18 @@ namespace StringManipulationTest
 			char character = 's';
 
 			char* result = mystrrchr(sentence, character);
-			
+
 			Assert::AreEqual(&sentence[17], result);
+		}
+
+		TEST_METHOD(Search_For_The_Null_Termination_Char_In_A_Sentence)
+		{
+			char sentence[] = "This is a simple string";
+			char character = '\0';
+
+			char* result = mystrrchr(sentence, character);
+
+			Assert::AreEqual(&sentence[23], result);
 		}
 
 		TEST_METHOD(Not_Found)

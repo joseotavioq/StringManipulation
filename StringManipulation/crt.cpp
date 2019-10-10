@@ -281,7 +281,10 @@ char* mystrrchr(const char* str, int ch)
 		strChar = (char*)str++;
 	}
 
-	if (lastCharFound != nullptr)
+	//for the null termination char
+	if (*strChar == ch)
+		return strChar;
+	else if (lastCharFound != nullptr)
 		return lastCharFound;
 
 	return nullptr;
