@@ -278,7 +278,8 @@ char* mystrrchr(const char* str, int ch)
 		if (*strChar == ch)
 			lastCharFound = strChar;
 
-		strChar = (char*)str++;
+		str++;
+		strChar = (char*)str;
 	}
 
 	//for the null termination char
@@ -293,13 +294,14 @@ char* mystrrchr(const char* str, int ch)
 char* mystrchr(const char* str, int ch)
 {
 	char* strChar = (char*)str;
-	
+
 	while (*strChar != '\0')
 	{
 		if (*strChar == ch)
 			return strChar;
 
-		strChar = (char*)str++;
+		str++;
+		strChar = (char*)str;
 	}
 
 	//for the null termination char
@@ -311,7 +313,26 @@ char* mystrchr(const char* str, int ch)
 
 int mystrspn(const char* str, const char* strCharSet)
 {
-	return 0;
+	char asciiTable[128] = { '\0' };
+	int strCharSetLength = mystrlen(strCharSet);
+	for (size_t i = 0; i < strCharSetLength; i++)
+	{
+		char* strChar = (char*)strCharSet + i;
+		asciiTable[*strChar] = *strChar;
+	}
+
+	int elementsFound = 0;
+	char* strChar = (char*)str;
+	while (*strChar != '\0')
+	{
+		if (asciiTable[*strChar] == *strChar)
+			elementsFound++;
+
+		str++;
+		strChar = (char*)str;
+	}
+
+	return elementsFound;
 }
 
 void myitoa(const int ival, char* szval)
