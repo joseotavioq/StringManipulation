@@ -270,6 +270,20 @@ char* mystrstr(const char* str1, const char* str2)
 
 char* mystrrchr(const char* str, int ch)
 {
+	char* strChar = (char*)str;
+	char* lastCharFound = nullptr;
+
+	while (*strChar != '\0')
+	{
+		if (*strChar == ch)
+			lastCharFound = strChar;
+
+		strChar = (char*)str++;
+	}
+
+	if (lastCharFound != nullptr)
+		return lastCharFound;
+
 	return nullptr;
 }
 
