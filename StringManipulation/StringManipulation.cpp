@@ -4,8 +4,4 @@
 
 int main()
 {
-	char sentence[] = "This is a simple string";
-	char word[] = "string";
-
-	char* result = mystrstr(sentence, word);
 }
