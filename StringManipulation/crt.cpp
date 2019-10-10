@@ -292,6 +292,20 @@ char* mystrrchr(const char* str, int ch)
 
 char* mystrchr(const char* str, int ch)
 {
+	char* strChar = (char*)str;
+	
+	while (*strChar != '\0')
+	{
+		if (*strChar == ch)
+			return strChar;
+
+		strChar = (char*)str++;
+	}
+
+	//for the null termination char
+	if (*strChar == ch)
+		return strChar;
+
 	return nullptr;
 }
 
