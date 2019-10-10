@@ -178,6 +178,7 @@
     <ClCompile Include="StrNCatTest.cpp" />
     <ClCompile Include="StrNCmpTest.cpp" />
     <ClCompile Include="StrNCpyTest.cpp" />
+    <ClCompile Include="StrStrTest.cpp" />
     <ClCompile Include="ToLowerTest.cpp" />
     <ClCompile Include="ToUpperTest.cpp" />
   </ItemGroup>

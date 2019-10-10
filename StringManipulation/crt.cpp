@@ -241,6 +241,30 @@ char* mystrcat(char* dst, const char* src)
 
 char* mystrstr(const char* str1, const char* str2)
 {
+	char* str1Char = (char*)str1;
+	char* str2Char = (char*)str2;
+
+	int numberOfEqualCharacters = 0;
+	int str2Length = mystrlen(str2);
+
+	while (*str1Char != '\0')
+	{
+		if (*str1Char == *str2Char)
+			numberOfEqualCharacters++;
+		else if (numberOfEqualCharacters == str2Length)
+			return (char*)str1 - numberOfEqualCharacters;
+		else
+			numberOfEqualCharacters = 0;
+
+		str1++;
+
+		str1Char = (char*)str1;
+		str2Char = (char*)str2 + numberOfEqualCharacters;
+	}
+
+	if (numberOfEqualCharacters == str2Length)
+		return (char*)str1 - numberOfEqualCharacters;
+
 	return nullptr;
 }
 
