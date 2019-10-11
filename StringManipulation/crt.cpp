@@ -345,7 +345,25 @@ void myftoa(const float fval, char* szval)
 
 int myatoi(char* str)
 {
-	return 0;
+	int result = 0;
+	char* strChar = (char*)str;
+	bool convertToNegative = false;
+
+	while (*strChar != '\0')
+	{
+		if (*strChar == '-')
+			convertToNegative = true;
+		else if (*strChar >= '0' && *strChar <= '9')
+			result = result * 10 + (*strChar - '0');
+
+		str++;
+		strChar = (char*)str;
+	}
+
+	if (convertToNegative)
+		result = result * -1;
+
+	return result;
 }
 
 float myatof(char* str)
