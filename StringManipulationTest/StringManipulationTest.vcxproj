@@ -184,6 +184,7 @@
     <ClCompile Include="StrRChrTest.cpp" />
     <ClCompile Include="StrSpnTest.cpp" />
     <ClCompile Include="StrStrTest.cpp" />
+    <ClCompile Include="SwapCharsTest.cpp" />
     <ClCompile Include="ToLowerTest.cpp" />
     <ClCompile Include="ToUpperTest.cpp" />
   </ItemGroup>

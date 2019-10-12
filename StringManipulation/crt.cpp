@@ -444,6 +444,11 @@ char* rotchars(char ch[], unsigned int len)
 
 void swapchars(char* str, int pos1, int pos2)
 {
+	char* pos1Char = (char*)str + pos1;
+	char* pos2Char = (char*)str + pos2;
+	char tmp = *pos1Char;
+	*pos1Char = *pos2Char;
+	*pos2Char = tmp;
 }
 
 char GetFirstNonRepeatedChar(const char* str)
