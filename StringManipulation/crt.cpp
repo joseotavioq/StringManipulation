@@ -388,7 +388,18 @@ char* itostrbin(unsigned int ival, char* str)
 
 char* revstr(char* str)
 {
-	return nullptr;
+	int strLength = mystrlen(str);
+
+	for (size_t i = 0; i < strLength / 2; i++)
+	{
+		char* strChar = (char*)str + i;
+		char* lastChar = (char*)str + strLength - 1 - i;
+		char tmp = *strChar;
+		*strChar = *lastChar;
+		*lastChar = tmp;
+	}
+
+	return str;
 }
 
 char* revsubstr(char* str, unsigned int pos, unsigned int len)
