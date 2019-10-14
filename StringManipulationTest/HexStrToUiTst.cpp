@@ -10,7 +10,7 @@ namespace StringManipulationTest
 	{
 	public:
 
-		TEST_METHOD(Convert_0x00A1_To_Int)
+		TEST_METHOD(Convert_0x00A1_To_Int_161)
 		{
 			char value[] = "0x00A1";
 
@@ -19,7 +19,7 @@ namespace StringManipulationTest
 			Assert::AreEqual(161, result);
 		}
 
-		TEST_METHOD(Convert_0x9A82_To_Int)
+		TEST_METHOD(Convert_0x9A82_To_Int_39554)
 		{
 			char value[] = "0x9a82";
 
@@ -28,7 +28,7 @@ namespace StringManipulationTest
 			Assert::AreEqual(39554, result);
 		}
 
-		TEST_METHOD(Convert_0xB28_To_Int)
+		TEST_METHOD(Convert_0xB28_To_Int_2856)
 		{
 			char value[] = "0xB28";
 
@@ -37,7 +37,7 @@ namespace StringManipulationTest
 			Assert::AreEqual(2856, result);
 		}
 
-		TEST_METHOD(Convert_0x25_To_Int)
+		TEST_METHOD(Convert_0x25_To_Int_37)
 		{
 			char value[] = "0x25";
 
