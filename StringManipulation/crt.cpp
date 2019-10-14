@@ -378,7 +378,40 @@ char* itostrhex(unsigned int ival, char* str)
 
 unsigned int hexstrtoui(char* str)
 {
-	return 0;
+	int result = 0;
+
+	//skip 0x
+	str = str + 2;
+	int length = mystrlen(str) - 1;
+
+	char* strChar = (char*)str;
+	while (*strChar != '\0')
+	{
+		int value = 0;
+
+		if (*strChar >= '0' && *strChar <= '9')
+			value = *strChar - '0';
+		else if ((*strChar >= 'A' && *strChar <= 'F'))
+			value = 10 + (*strChar - 'A');
+		else if ((*strChar >= 'a' && *strChar <= 'f'))
+			value = 10 + (*strChar - 'a');
+
+		if (value > 0)
+		{
+			int sixteenPowerOfLength = 1;
+
+			for (size_t i = 0; i < length; i++)
+				sixteenPowerOfLength *= 16;
+
+			result += value * sixteenPowerOfLength;
+		}
+
+		length--;
+		str++;
+		strChar = (char*)str;
+	}
+
+	return result;
 }
 
 char* itostrbin(unsigned int ival, char* str)
