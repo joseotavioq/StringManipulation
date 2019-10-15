@@ -163,6 +163,7 @@
   <ItemGroup>
     <ClCompile Include="AtoiTest.cpp" />
     <ClCompile Include="HexStrToUiTst.cpp" />
+    <ClCompile Include="ItoStrHexTest.cpp" />
     <ClCompile Include="MemCpyTest.cpp" />
     <ClCompile Include="MemMoveTest.cpp" />
     <ClCompile Include="MemSetTest.cpp" />

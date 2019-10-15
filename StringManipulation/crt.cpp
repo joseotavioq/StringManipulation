@@ -373,7 +373,31 @@ float myatof(char* str)
 
 char* itostrhex(unsigned int ival, char* str)
 {
-	return nullptr;
+	int index = 0;
+	char* strChar = (char*)str;
+	
+	while (ival > 0)
+	{
+		strChar = (char*)str + index;
+
+		int mod = ival % 16;
+
+		if (mod >= 10 && mod <= 15)
+			* strChar = ('A' + mod) - 10;
+		else
+			*strChar = '0' + mod;
+
+		ival = ival / 16;
+
+		index++;
+	}
+
+	strChar = (char*)str + index;
+	*strChar = '\0';
+
+	str = revstr(str);
+
+	return str;
 }
 
 unsigned int hexstrtoui(char* str)
