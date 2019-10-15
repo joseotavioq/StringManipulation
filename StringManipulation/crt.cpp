@@ -437,7 +437,22 @@ char* revstr(char* str)
 
 char* revsubstr(char* str, unsigned int pos, unsigned int len)
 {
-	return nullptr;
+	int start = pos;
+	int end = pos + len - 1;
+
+	while (start < end)
+	{
+		char* strChar = (char*)str + start;
+		char* lastChar = (char*)str + end;
+		char tmp = *strChar;
+		*strChar = *lastChar;
+		*lastChar = tmp;
+
+		start++;
+		end--;
+	}
+
+	return str;
 }
 
 char* revwrd(char* str)
