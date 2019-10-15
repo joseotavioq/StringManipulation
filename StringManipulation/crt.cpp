@@ -457,7 +457,24 @@ char* revsubstr(char* str, unsigned int pos, unsigned int len)
 
 char* revwrd(char* str)
 {
-	return nullptr;
+	str = revstr(str);
+	size_t len = mystrlen(str);
+
+	size_t initialPositionOfAWord = 0;
+
+	for (size_t i = 0; i <= len; i++)
+	{
+		char* currentChar = (char*)str + i;
+
+		if (*currentChar == ' ' || *currentChar == '\0')
+		{
+			str = revsubstr(str, initialPositionOfAWord, i - initialPositionOfAWord);
+
+			initialPositionOfAWord = i + 1;
+		}
+	}
+
+	return str;
 }
 
 char* remstr(char* str, unsigned int pos, unsigned int count)
