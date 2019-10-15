@@ -314,7 +314,7 @@ char* mystrchr(const char* str, int ch)
 int mystrspn(const char* str, const char* strCharSet)
 {
 	char asciiTable[128] = { '\0' };
-	int strCharSetLength = mystrlen(strCharSet);
+	size_t strCharSetLength = mystrlen(strCharSet);
 	for (size_t i = 0; i < strCharSetLength; i++)
 	{
 		char* strChar = (char*)strCharSet + i;
@@ -382,7 +382,7 @@ unsigned int hexstrtoui(char* str)
 
 	//skip 0x
 	str = str + 2;
-	int length = mystrlen(str) - 1;
+	size_t length = mystrlen(str) - 1;
 
 	char* strChar = (char*)str;
 	while (*strChar != '\0')
@@ -421,7 +421,7 @@ char* itostrbin(unsigned int ival, char* str)
 
 char* revstr(char* str)
 {
-	int strLength = mystrlen(str);
+	size_t strLength = mystrlen(str);
 
 	for (size_t i = 0; i < strLength / 2; i++)
 	{
