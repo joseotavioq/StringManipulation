@@ -72,7 +72,7 @@ char* mystrncpy(char* dst, const char* src, unsigned int count)
 	for (size_t i = 0; i < count; i++)
 	{
 		char* srcChar = (char*)src + i;
-		char* dstChar = (char*)dst + i;
+		char* dstChar = dst + i;
 
 		if (*srcChar == '\0')
 		{
@@ -122,7 +122,7 @@ char* mystrncat(char* dst, char const* src, unsigned int count)
 	{
 		for (size_t i = 0; i < dstLength; i++)
 		{
-			char* dstChar = (char*)dst + i;
+			char* dstChar = dst + i;
 			char* tmpChar = (char*)tmp + i;
 			*tmpChar = *dstChar;
 		}
@@ -135,7 +135,7 @@ char* mystrncat(char* dst, char const* src, unsigned int count)
 			if (*srcChar == '\0')
 				break;
 
-			char* dstChar = (char*)dst + i;
+			char* dstChar = dst + i;
 			*dstChar = *srcChar;
 
 			countOfItensOnSource++;
@@ -145,12 +145,12 @@ char* mystrncat(char* dst, char const* src, unsigned int count)
 		for (size_t i = countOfItensOnSource; i < dstLength; i++)
 		{
 			char* tmpChar = (char*)tmp + t;
-			char* dstChar = (char*)dst + i;
+			char* dstChar = dst + i;
 			*dstChar = *tmpChar;
 			t++;
 		}
 
-		*((char*)dst + dstLength) = '\0';
+		*(dst + dstLength) = '\0';
 
 		free(tmp);
 
@@ -187,12 +187,12 @@ int mystrcmp(const char* str1, const char* str2)
 {
 	do
 	{
-		char* currentCharFirst = (char*)str1;
-		char* currentCharSecond = (char*)str2;
+		char currentCharFirst = *str1;
+		char currentCharSecond = *str2;
 
-		if (*currentCharFirst > * currentCharSecond || *currentCharFirst < *currentCharSecond)
+		if (currentCharFirst > currentCharSecond || currentCharFirst < currentCharSecond)
 		{
-			return *currentCharFirst - *currentCharSecond;
+			return currentCharFirst - currentCharSecond;
 		}
 
 		str2++;
@@ -205,11 +205,11 @@ int mystricmp(const char* str1, const char* str2)
 {
 	do
 	{
-		char* currentCharFirst = (char*)str1;
-		char* currentCharSecond = (char*)str2;
+		char currentCharFirst = *str1;
+		char currentCharSecond = *str2;
 
-		char first = mytolower(*currentCharFirst);
-		char second = mytolower(*currentCharSecond);
+		char first = mytolower(currentCharFirst);
+		char second = mytolower(currentCharSecond);
 
 		if (first > second || first < second)
 		{
@@ -226,7 +226,7 @@ char* mystrcat(char* dst, const char* src)
 {
 	unsigned int dstLength = mystrlen(dst);
 
-	char* startAtChar = (char*)dst + dstLength;
+	char* startAtChar = dst + dstLength;
 
 	do {
 		char* srcChar = (char*)src;
@@ -241,15 +241,15 @@ char* mystrcat(char* dst, const char* src)
 
 char* mystrstr(const char* str1, const char* str2)
 {
-	char* str1Char = (char*)str1;
-	char* str2Char = (char*)str2;
+	char str1Char = *str1;
+	char str2Char = *str2;
 
 	int numberOfEqualCharacters = 0;
 	int str2Length = mystrlen(str2);
 
-	while (*str1Char != '\0')
+	while (str1Char != '\0')
 	{
-		if (*str1Char == *str2Char)
+		if (str1Char == str2Char)
 			numberOfEqualCharacters++;
 		else if (numberOfEqualCharacters == str2Length)
 			return (char*)str1 - numberOfEqualCharacters;
@@ -258,8 +258,8 @@ char* mystrstr(const char* str1, const char* str2)
 
 		str1++;
 
-		str1Char = (char*)str1;
-		str2Char = (char*)str2 + numberOfEqualCharacters;
+		str1Char = *str1;
+		str2Char = *(str2 + numberOfEqualCharacters);
 	}
 
 	if (numberOfEqualCharacters == str2Length)
@@ -317,19 +317,19 @@ int mystrspn(const char* str, const char* strCharSet)
 	size_t strCharSetLength = mystrlen(strCharSet);
 	for (size_t i = 0; i < strCharSetLength; i++)
 	{
-		char* strChar = (char*)strCharSet + i;
-		asciiTable[*strChar] = *strChar;
+		char strChar = *(strCharSet + i);
+		asciiTable[strChar] = strChar;
 	}
 
 	int elementsFound = 0;
-	char* strChar = (char*)str;
-	while (*strChar != '\0')
+	char strChar = *str;
+	while (strChar != '\0')
 	{
-		if (asciiTable[*strChar] == *strChar)
+		if (asciiTable[strChar] == strChar)
 			elementsFound++;
 
 		str++;
-		strChar = (char*)str;
+		strChar = *str;
 	}
 
 	return elementsFound;
@@ -346,18 +346,16 @@ void myftoa(const float fval, char* szval)
 int myatoi(char* str)
 {
 	int result = 0;
-	char* strChar = (char*)str;
 	bool convertToNegative = false;
 
-	while (*strChar != '\0')
+	while (*str != '\0')
 	{
-		if (*strChar == '-')
+		if (*str == '-')
 			convertToNegative = true;
-		else if (*strChar >= '0' && *strChar <= '9')
-			result = result * 10 + (*strChar - '0');
+		else if (*str >= '0' && *str <= '9')
+			result = result * 10 + (*str - '0');
 
 		str++;
-		strChar = (char*)str;
 	}
 
 	if (convertToNegative)
@@ -374,11 +372,11 @@ float myatof(char* str)
 char* itostrhex(unsigned int ival, char* str)
 {
 	int index = 0;
-	char* strChar = (char*)str;
-	
+	char* strChar = str;
+
 	while (ival > 0)
 	{
-		strChar = (char*)str + index;
+		strChar = str + index;
 
 		int mod = ival % 16;
 
@@ -392,7 +390,7 @@ char* itostrhex(unsigned int ival, char* str)
 		index++;
 	}
 
-	strChar = (char*)str + index;
+	strChar = str + index;
 	*strChar = '\0';
 
 	str = revstr(str);
@@ -408,17 +406,16 @@ unsigned int hexstrtoui(char* str)
 	str = str + 2;
 	size_t length = mystrlen(str) - 1;
 
-	char* strChar = (char*)str;
-	while (*strChar != '\0')
+	while (*str != '\0')
 	{
 		int value = 0;
 
-		if (*strChar >= '0' && *strChar <= '9')
-			value = *strChar - '0';
-		else if ((*strChar >= 'A' && *strChar <= 'F'))
-			value = 10 + (*strChar - 'A');
-		else if ((*strChar >= 'a' && *strChar <= 'f'))
-			value = 10 + (*strChar - 'a');
+		if (*str >= '0' && *str <= '9')
+			value = *str - '0';
+		else if ((*str >= 'A' && *str <= 'F'))
+			value = 10 + (*str - 'A');
+		else if ((*str >= 'a' && *str <= 'f'))
+			value = 10 + (*str - 'a');
 
 		if (value > 0)
 		{
@@ -432,7 +429,6 @@ unsigned int hexstrtoui(char* str)
 
 		length--;
 		str++;
-		strChar = (char*)str;
 	}
 
 	return result;
@@ -449,8 +445,8 @@ char* revstr(char* str)
 
 	for (size_t i = 0; i < strLength / 2; i++)
 	{
-		char* strChar = (char*)str + i;
-		char* lastChar = (char*)str + strLength - 1 - i;
+		char* strChar = str + i;
+		char* lastChar = str + strLength - 1 - i;
 		char tmp = *strChar;
 		*strChar = *lastChar;
 		*lastChar = tmp;
@@ -466,8 +462,8 @@ char* revsubstr(char* str, unsigned int pos, unsigned int len)
 
 	while (start < end)
 	{
-		char* strChar = (char*)str + start;
-		char* lastChar = (char*)str + end;
+		char* strChar = str + start;
+		char* lastChar = str + end;
 		char tmp = *strChar;
 		*strChar = *lastChar;
 		*lastChar = tmp;
@@ -488,7 +484,7 @@ char* revwrd(char* str)
 
 	for (size_t i = 0; i <= len; i++)
 	{
-		char* currentChar = (char*)str + i;
+		char* currentChar = str + i;
 
 		if (*currentChar == ' ' || *currentChar == '\0')
 		{
@@ -533,8 +529,8 @@ char* rotchars(char ch[], unsigned int len)
 
 void swapchars(char* str, int pos1, int pos2)
 {
-	char* pos1Char = (char*)str + pos1;
-	char* pos2Char = (char*)str + pos2;
+	char* pos1Char = str + pos1;
+	char* pos2Char = str + pos2;
 	char tmp = *pos1Char;
 	*pos1Char = *pos2Char;
 	*pos2Char = tmp;
