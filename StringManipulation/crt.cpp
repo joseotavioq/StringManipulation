@@ -499,7 +499,21 @@ char* revwrd(char* str)
 
 char* remstr(char* str, unsigned int pos, unsigned int count)
 {
-	return nullptr;
+	int length = mystrlen(str);
+
+	if (pos + count == length)
+	{
+		char* strChar = str + pos;
+		*strChar = '\0';
+		return str;
+	}
+
+	mymemmove(str + pos + count, str + pos, length - (pos + count));
+
+	char* strChar = str + length - count;
+	*strChar = '\0';
+
+	return str;
 }
 
 char* remchars(char* str, char ctrl[], unsigned int size)
