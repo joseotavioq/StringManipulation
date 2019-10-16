@@ -337,6 +337,27 @@ int mystrspn(const char* str, const char* strCharSet)
 
 void myitoa(const int ival, char* szval)
 {
+	int index = 0;
+	int result = ival;
+
+	if (ival < 0)
+	{
+		*szval = '-';
+		index++;
+		result *= -1;
+	}
+
+	do
+	{
+		int num = result % 10;
+		*(szval + index) = '0' + num;
+		index++;
+		result /= 10;
+	} while (result != 0);
+
+	*(szval + index) = '\0';
+
+	szval = revstr(szval + (ival < 0 ? 1 : 0));
 }
 
 void myftoa(const float fval, char* szval)
