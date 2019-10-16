@@ -552,5 +552,30 @@ void swapchars(char* str, int pos1, int pos2)
 
 char GetFirstNonRepeatedChar(const char* str)
 {
-	return 0;
+	int asciiTable[128] = { 0 };
+
+	int index = 0;
+	char* strChar = (char*)str;
+
+	while (*strChar != '\0')
+	{
+		asciiTable[*strChar]++;
+
+		index++;
+		strChar = (char*)str + index;
+	}
+
+	index = 0;
+	strChar = (char*)str;
+
+	while (*strChar != '\0')
+	{
+		if (asciiTable[*strChar] == 1)
+			return *strChar;
+
+		index++;
+		strChar = (char*)str + index;
+	}
+
+	return '\0';
 }
