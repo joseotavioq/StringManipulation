@@ -164,6 +164,7 @@
     <ClCompile Include="AtoiTest.cpp" />
     <ClCompile Include="GetFirstNonRepeatedCharTest.cpp" />
     <ClCompile Include="HexStrToUiTst.cpp" />
+    <ClCompile Include="InsertStrTest.cpp" />
     <ClCompile Include="ItoaTest.cpp" />
     <ClCompile Include="ItoStrHexTest.cpp" />
     <ClCompile Include="MemCpyTest.cpp" />

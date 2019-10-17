@@ -99,6 +99,9 @@
     <ClCompile Include="ItoaTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InsertStrTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">

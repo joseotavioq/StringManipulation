@@ -402,7 +402,7 @@ char* itostrhex(unsigned int ival, char* str)
 		int mod = ival % 16;
 
 		if (mod >= 10 && mod <= 15)
-			* strChar = ('A' + mod) - 10;
+			*strChar = ('A' + mod) - 10;
 		else
 			*strChar = '0' + mod;
 
@@ -544,7 +544,34 @@ char* remchars(char* str, char ctrl[], unsigned int size)
 
 char* insertstr(char* dst, const char* src, unsigned int pos)
 {
-	return nullptr;
+	int length = mystrlen(src);
+
+	void* tmp = malloc(sizeof(char) * length);
+
+	if (tmp != NULL)
+	{
+		for (size_t i = 0; i < length; i++)
+		{
+			char* srcChar = (char*)src + i;
+			char* tmpChar = (char*)tmp + i;
+			*tmpChar = *srcChar;
+		}
+
+		for (size_t i = 0; i < length; i++)
+		{
+			char* tmpChar = (char*)tmp + i;
+			char* dstChar = (char*)dst + pos + i;
+
+			if (*dstChar == '\0')
+				break;
+
+			*dstChar = *tmpChar;
+		}
+
+		free(tmp);
+	}
+
+	return dst;
 }
 
 char* rotstr(char* str)
