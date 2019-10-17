@@ -3,16 +3,16 @@
 
 char mytolower(char ch)
 {
-	if (ch >= 65 && ch <= 90)
-		return ch + 32;
+	if (ch >= 'A' && ch <= 'Z')
+		return ch + ('a' - 'A');
 	else
 		return ch;
 }
 
 char mytoupper(char ch)
 {
-	if (ch >= 97 && ch <= 122)
-		return ch - 32;
+	if (ch >= 'a' && ch <= 'z')
+		return ch - ('a' - 'A');
 	else
 		return ch;
 }
