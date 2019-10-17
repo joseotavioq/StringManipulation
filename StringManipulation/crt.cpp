@@ -162,12 +162,11 @@ char* mystrncat(char* dst, char const* src, unsigned int count)
 
 unsigned int mystrlen(char const* str)
 {
-	int length = 0;
+	const char* initial = str;
 
-	while (*(str + length) != '\0')
-		length++;
+	while (*str != '\0') { str++; }
 
-	return length;
+	return str - initial;
 }
 
 char* mystrcpy(char* dst, const char* src)
