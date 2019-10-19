@@ -310,7 +310,31 @@ char* mystrchr(const char* str, int ch)
 	return nullptr;
 }
 
-int mystrspn(const char* str, const char* strCharSet)
+int mystrspn_bigO_of_n_m(const char* str, const char* strCharSet)
+{
+	char* initialPointer = (char*)str;
+
+	while (*str)
+	{
+		char* cset = (char*)strCharSet;
+		while (*cset)
+		{
+			if (*str == *cset)
+				break;
+
+			cset++;
+		}
+
+		if (!*cset)
+			break;
+
+		str++;
+	}
+
+	return str - initialPointer;
+}
+
+int mystrspn_bigO_of_n(const char* str, const char* strCharSet)
 {
 	char asciiTable[128] = { '\0' };
 	size_t strCharSetLength = mystrlen(strCharSet);

@@ -41,7 +41,8 @@ char* mystrcat(char* dst, const char* src);
 char* mystrstr(const char* str1, const char* str2);	// GetNode a substring
 char* mystrrchr(const char* str, int ch); // Scan a string for the last occurrence of a character
 char* mystrchr(const char* str, int ch); // search a string for a character
-int   mystrspn(const char* str, const char* strCharSet); //Returns an integer value specifying the length of the substring in string that consists entirely of characters in strCharSet
+int   mystrspn_bigO_of_n_m(const char* str, const char* strCharSet); //Returns an integer value specifying the length of the substring in string that consists entirely of characters in strCharSet
+int   mystrspn_bigO_of_n(const char* str, const char* strCharSet);
 
 ////////////////////////////////////////////////////////////////////////
 /////////////////  ITOA, DTOA, ATOI, ATOF
