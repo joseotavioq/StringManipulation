@@ -19,6 +19,7 @@ char mytoupper(char ch);
 //
 void* mymemcpy(void* src_, void* dst_, unsigned int count);
 void* mymemmove(void* src_, void* dst_, unsigned int count);
+void* mymemmove_without_memory_allocation(void* src_, void* dst_, unsigned int count);
 void* mymemset(void* dest, char c, unsigned count);
 
 ////////////////////////////////////////////////////////////////////////

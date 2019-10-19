@@ -55,6 +55,33 @@ void* mymemmove(void* src_, void* dst_, unsigned int count)
 	return dst_;
 }
 
+
+void* mymemmove_without_memory_allocation(void* src_, void* dst_, unsigned int count)
+{
+	char* src = (char*)src_;
+	char* dst = (char*)dst_;
+
+	if (dst > src)
+	{
+		while (count--)
+		{
+			*(dst + count) = *(src + count);
+		}
+	}
+	else
+	{
+		int index = 0;
+
+		while (count--)
+		{
+			*(dst + index) = *(src + index);
+			index++;
+		}
+	}
+
+	return dst_;
+}
+
 void* mymemset(void* dest, char c, unsigned count)
 {
 	for (size_t i = 0; i < count; i++)
