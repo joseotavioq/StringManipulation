@@ -162,6 +162,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AtoiTest.cpp" />
+    <ClCompile Include="FtoaTest.cpp" />
     <ClCompile Include="GetFirstNonRepeatedCharTest.cpp" />
     <ClCompile Include="HexStrToUiTst.cpp" />
     <ClCompile Include="InsertStrTest.cpp" />

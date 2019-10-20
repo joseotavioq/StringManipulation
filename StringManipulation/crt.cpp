@@ -412,6 +412,45 @@ void myitoa(const int ival, char* szval)
 
 void myftoa(const float fval, char* szval)
 {
+	int index = 0;
+
+	int posOfPeriod = 0;
+	float onlyDecimal = fval;
+	int result = onlyDecimal;
+
+	if (result < 0)
+	{
+		*szval = '-';
+		index++;
+		result *= -1;
+		onlyDecimal *= -1;
+		posOfPeriod++;
+	}
+
+	while (onlyDecimal - result > 0)
+	{
+		onlyDecimal *= 10;
+		posOfPeriod++;
+		result = onlyDecimal;
+	}
+
+	do
+	{
+		if (posOfPeriod == index)
+		{
+			*(szval + index) = '.';
+			index++;
+		}
+
+		int num = result % 10;
+		*(szval + index) = '0' + num;
+		index++;
+		result /= 10;
+	} while (result != 0);
+
+	*(szval + index) = '\0';
+
+	szval = revstr(szval + (fval < 0 ? 1 : 0));
 }
 
 int myatoi(char* str)
