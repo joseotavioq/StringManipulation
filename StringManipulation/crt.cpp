@@ -628,7 +628,30 @@ char* remstr(char* str, unsigned int pos, unsigned int count)
 
 char* remchars(char* str, char ctrl[], unsigned int size)
 {
-	return nullptr;
+	char* newStr = str;
+
+	for (size_t i = 0; *(str + i) != '\0'; i++)
+	{
+		bool ctrlFound = false;
+		for (size_t j = 0; j < size; j++)
+		{
+			if (*(str + i) == ctrl[j])
+			{
+				ctrlFound = true;
+				break;
+			}
+		}
+
+		if (!ctrlFound)
+		{
+			*newStr = *(str + i);
+			newStr++;
+		}
+	}
+
+	*newStr = '\0';
+
+	return str;
 }
 
 char* insertstr(char* dst, const char* src, unsigned int pos)
