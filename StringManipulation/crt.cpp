@@ -688,7 +688,21 @@ char* insertstr(char* dst, const char* src, unsigned int pos)
 
 char* rotstr(char* str)
 {
-	return nullptr;
+	int length = mystrlen(str);
+	char firstChar = *str;
+
+	int i = 0;
+	while (*(str + i))
+	{
+		if (*(str + i + 1) == '\0')
+			*(str + i) = firstChar;
+		else
+			*(str + i) = *(str + i + 1);
+
+		i++;
+	}
+
+	return str;
 }
 
 char* rotnstr(char* str, unsigned int n)
