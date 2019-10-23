@@ -730,7 +730,17 @@ char* rotnstr(char* str, unsigned int n)
 
 char* rotchars(char ch[], unsigned int len)
 {
-	return nullptr;
+	char firstChar = ch[0];
+
+	for (size_t i = 0; i < len; i++)
+	{
+		if (i == len - 1)
+			ch[i] = firstChar;
+		else
+			ch[i] = ch[i + 1];
+	}
+
+	return ch;
 }
 
 void swapchars(char* str, int pos1, int pos2)
