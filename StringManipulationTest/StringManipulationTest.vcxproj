@@ -182,6 +182,7 @@
     <ClCompile Include="RevStrTest.cpp" />
     <ClCompile Include="RevSubStrTest.cpp" />
     <ClCompile Include="RevWrdTest.cpp" />
+    <ClCompile Include="RotNStrTest.cpp" />
     <ClCompile Include="RotStrTest.cpp" />
     <ClCompile Include="StrCatTest.cpp" />
     <ClCompile Include="StrChrTest.cpp" />
