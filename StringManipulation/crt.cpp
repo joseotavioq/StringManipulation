@@ -573,7 +573,20 @@ unsigned int hexstrtoui(char* str)
 
 char* itostrbin(unsigned int ival, char* str)
 {
-	return nullptr;
+	char* initial = str;
+
+	do
+	{
+		int mod = ival % 2;
+		ival /= 2;
+
+		*str = mod + '0';
+		str++;
+	} while (ival > 0);
+
+	*str = '\0';
+
+	return revstr(initial);
 }
 
 char* revstr(char* str)
