@@ -476,7 +476,34 @@ int myatoi(char* str)
 
 float myatof(char* str)
 {
-	return 0.0f;
+	float result = 0;
+	bool convertToNegative = false;
+	bool convertToDecimal = false;
+	int div = 10;
+
+	while (*str != '\0')
+	{
+		if (*str == '-')
+			convertToNegative = true;
+		else if (*str == '.')
+			convertToDecimal = true;
+		else if (*str >= '0' && *str <= '9')
+			if (convertToDecimal)
+			{
+				float decimal = ((float)(*str - '0')) / div;
+				result += decimal;
+				div *= 10;
+			}
+			else
+				result = result * 10 + (*str - '0');
+
+		str++;
+	}
+
+	if (convertToNegative)
+		result = result * -1;
+
+	return result;
 }
 
 char* itostrhex(unsigned int ival, char* str)

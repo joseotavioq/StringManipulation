@@ -161,6 +161,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AtofTest.cpp" />
     <ClCompile Include="AtoiTest.cpp" />
     <ClCompile Include="FtoaTest.cpp" />
     <ClCompile Include="GetFirstNonRepeatedCharTest.cpp" />
