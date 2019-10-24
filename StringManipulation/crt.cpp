@@ -19,11 +19,12 @@ char mytoupper(char ch)
 
 void* mymemcpy(void* src_, void* dst_, unsigned int count)
 {
+	char* srcChar = (char*)src_;
+	char* dstChar = (char*)dst_;
+
 	for (size_t i = 0; i < count; i++)
 	{
-		char* srcChar = (char*)src_ + i;
-		char* dstChar = (char*)dst_ + i;
-		*dstChar = *srcChar;
+		*(dstChar + i) = *(srcChar + i);
 	}
 
 	return dst_;
@@ -84,10 +85,11 @@ void* mymemmove_without_memory_allocation(void* src_, void* dst_, unsigned int c
 
 void* mymemset(void* dest, char c, unsigned count)
 {
+	char* dstChar = (char*)dest;
+
 	for (size_t i = 0; i < count; i++)
 	{
-		char* dstChar = (char*)dest + i;
-		*dstChar = c;
+		*(dstChar + i) = c;
 	}
 
 	return dest;
@@ -204,7 +206,7 @@ char* mystrcpy(char* dst, const char* src)
 		char* dstChar = dst;
 		*dstChar = *srcChar;
 		dst++;
-	} while ((*(src++) != '\0'));
+	} while (*src++);
 
 	return dst;
 }
@@ -222,7 +224,7 @@ int mystrcmp(const char* str1, const char* str2)
 		}
 
 		str2++;
-	} while ((*(str1++) != '\0'));
+	} while (*str1++);
 
 	return 0;
 }
@@ -260,7 +262,7 @@ char* mystrcat(char* dst, const char* src)
 		*dstChar = *srcChar;
 
 		startAtChar++;
-	} while ((*(src++) != '\0'));
+	} while (*src++);
 
 	return dst;
 }
@@ -304,8 +306,7 @@ char* mystrrchr(const char* str, int ch)
 		if (*strChar == ch)
 			lastCharFound = strChar;
 
-		str++;
-		strChar = (char*)str;
+		strChar++;
 	}
 
 	//for the null termination char
@@ -326,8 +327,7 @@ char* mystrchr(const char* str, int ch)
 		if (*strChar == ch)
 			return strChar;
 
-		str++;
-		strChar = (char*)str;
+		strChar++;
 	}
 
 	//for the null termination char
@@ -509,26 +509,22 @@ float myatof(char* str)
 char* itostrhex(unsigned int ival, char* str)
 {
 	int index = 0;
-	char* strChar = str;
 
 	while (ival > 0)
 	{
-		strChar = str + index;
-
 		int mod = ival % 16;
 
 		if (mod >= 10 && mod <= 15)
-			*strChar = ('A' + mod) - 10;
+			*(str + index) = ('A' + mod) - 10;
 		else
-			*strChar = '0' + mod;
+			*(str + index) = '0' + mod;
 
 		ival = ival / 16;
 
 		index++;
 	}
 
-	strChar = str + index;
-	*strChar = '\0';
+	*(str + index) = '\0';
 
 	str = revstr(str);
 
