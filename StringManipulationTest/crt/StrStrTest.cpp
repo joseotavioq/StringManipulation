@@ -5,48 +5,51 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(StrStrTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Search_For_A_Word_That_Is_In_The_Middle_Of_A_Sentence)
+		TEST_CLASS(StrStrTest)
 		{
-			char sentence[] = "This is a simple string";
-			char word[] = "simple";
+		public:
 
-			char* result = mystrstr(sentence, word);
-			
-			Assert::AreEqual(&sentence[10], result);
-		}
+			TEST_METHOD(Search_For_A_Word_That_Is_In_The_Middle_Of_A_Sentence)
+			{
+				char sentence[] = "This is a simple string";
+				char word[] = "simple";
 
-		TEST_METHOD(Search_For_A_Word_That_Is_In_The_Beginning_Of_A_Sentence)
-		{
-			char sentence[] = "This is a simple string";
-			char word[] = "This";
+				char* result = mystrstr(sentence, word);
 
-			char* result = mystrstr(sentence, word);
+				Assert::AreEqual(&sentence[10], result);
+			}
 
-			Assert::AreEqual(&sentence[0], result);
-		}
+			TEST_METHOD(Search_For_A_Word_That_Is_In_The_Beginning_Of_A_Sentence)
+			{
+				char sentence[] = "This is a simple string";
+				char word[] = "This";
 
-		TEST_METHOD(Search_For_A_Word_That_Is_In_The_End_Of_A_Sentence)
-		{
-			char sentence[] = "This is a simple string";
-			char word[] = "string";
+				char* result = mystrstr(sentence, word);
 
-			char* result = mystrstr(sentence, word);
+				Assert::AreEqual(&sentence[0], result);
+			}
 
-			Assert::AreEqual(&sentence[17], result);
-		}
+			TEST_METHOD(Search_For_A_Word_That_Is_In_The_End_Of_A_Sentence)
+			{
+				char sentence[] = "This is a simple string";
+				char word[] = "string";
 
-		TEST_METHOD(Not_Found)
-		{
-			char sentence[] = "This is a simple string";
-			char word[] = "mpla";
+				char* result = mystrstr(sentence, word);
 
-			char* result = mystrstr(sentence, word);
+				Assert::AreEqual(&sentence[17], result);
+			}
 
-			Assert::AreEqual(nullptr, result);
-		}
-	};
+			TEST_METHOD(Not_Found)
+			{
+				char sentence[] = "This is a simple string";
+				char word[] = "mpla";
+
+				char* result = mystrstr(sentence, word);
+
+				Assert::AreEqual(nullptr, result);
+			}
+		};
+	}
 }

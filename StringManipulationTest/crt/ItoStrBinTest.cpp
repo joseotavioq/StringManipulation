@@ -5,38 +5,41 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(ItoStrBinTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Convert_161_To_Bin_11000000111001)
+		TEST_CLASS(ItoStrBinTest)
 		{
-			unsigned int value = 12345;
-			char str[15];
+		public:
 
-			itostrbin(value, str);
+			TEST_METHOD(Convert_161_To_Bin_11000000111001)
+			{
+				unsigned int value = 12345;
+				char str[15];
 
-			Assert::AreEqual("11000000111001", str);
-		}
+				itostrbin(value, str);
 
-		TEST_METHOD(Convert_10_To_Bin_1010)
-		{
-			unsigned int value = 10;
-			char str[5];
+				Assert::AreEqual("11000000111001", str);
+			}
 
-			itostrbin(value, str);
+			TEST_METHOD(Convert_10_To_Bin_1010)
+			{
+				unsigned int value = 10;
+				char str[5];
 
-			Assert::AreEqual("1010", str);
-		}
+				itostrbin(value, str);
 
-		TEST_METHOD(Convert_10101_To_Bin_10011101110101)
-		{
-			unsigned int value = 10101;
-			char str[15];
+				Assert::AreEqual("1010", str);
+			}
 
-			itostrbin(value, str);
+			TEST_METHOD(Convert_10101_To_Bin_10011101110101)
+			{
+				unsigned int value = 10101;
+				char str[15];
 
-			Assert::AreEqual("10011101110101", str);
-		}
-	};
+				itostrbin(value, str);
+
+				Assert::AreEqual("10011101110101", str);
+			}
+		};
+	}
 }

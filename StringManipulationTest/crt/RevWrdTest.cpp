@@ -5,35 +5,38 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(RevWrdTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Revert_Words_With_Count_Equals_To_Even)
+		TEST_CLASS(RevWrdTest)
 		{
-			char sentence[] = "The cat and the dog";
+		public:
 
-			char* result = revwrd(sentence);
+			TEST_METHOD(Revert_Words_With_Count_Equals_To_Even)
+			{
+				char sentence[] = "The cat and the dog";
 
-			Assert::AreEqual("dog the and cat The", result);
-		}
+				char* result = revwrd(sentence);
 
-		TEST_METHOD(Revert_Words_With_Count_Equals_To_Odd)
-		{
-			char sentence[] = "This is simple string";
+				Assert::AreEqual("dog the and cat The", result);
+			}
 
-			char* result = revwrd(sentence);
+			TEST_METHOD(Revert_Words_With_Count_Equals_To_Odd)
+			{
+				char sentence[] = "This is simple string";
 
-			Assert::AreEqual("string simple is This", result);
-		}
+				char* result = revwrd(sentence);
 
-		TEST_METHOD(Only_One_Word)
-		{
-			char sentence[] = "Hey";
+				Assert::AreEqual("string simple is This", result);
+			}
 
-			char* result = revwrd(sentence);
+			TEST_METHOD(Only_One_Word)
+			{
+				char sentence[] = "Hey";
 
-			Assert::AreEqual("Hey", result);
-		}
-	};
+				char* result = revwrd(sentence);
+
+				Assert::AreEqual("Hey", result);
+			}
+		};
+	}
 }

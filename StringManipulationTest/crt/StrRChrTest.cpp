@@ -5,48 +5,51 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(StrRChrTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Search_For_The_Last_Char_s_In_A_Sentence)
+		TEST_CLASS(StrRChrTest)
 		{
-			char sentence[] = "This is a simple string";
-			char character = 's';
+		public:
 
-			char* result = mystrrchr(sentence, character);
+			TEST_METHOD(Search_For_The_Last_Char_s_In_A_Sentence)
+			{
+				char sentence[] = "This is a simple string";
+				char character = 's';
 
-			Assert::AreEqual(&sentence[17], result);
-		}
+				char* result = mystrrchr(sentence, character);
 
-		TEST_METHOD(Search_For_The_Null_Termination_Char_In_A_Sentence)
-		{
-			char sentence[] = "This is a simple string";
-			char character = '\0';
+				Assert::AreEqual(&sentence[17], result);
+			}
 
-			char* result = mystrrchr(sentence, character);
+			TEST_METHOD(Search_For_The_Null_Termination_Char_In_A_Sentence)
+			{
+				char sentence[] = "This is a simple string";
+				char character = '\0';
 
-			Assert::AreEqual(&sentence[23], result);
-		}
+				char* result = mystrrchr(sentence, character);
 
-		TEST_METHOD(Search_For_The_Null_Termination_Char_In_The_Middle_Of_A_Sentence)
-		{
-			char sentence[] = "This is a \0simple string";
-			char character = '\0';
+				Assert::AreEqual(&sentence[23], result);
+			}
 
-			char* result = mystrrchr(sentence, character);
+			TEST_METHOD(Search_For_The_Null_Termination_Char_In_The_Middle_Of_A_Sentence)
+			{
+				char sentence[] = "This is a \0simple string";
+				char character = '\0';
 
-			Assert::AreEqual(&sentence[10], result);
-		}
+				char* result = mystrrchr(sentence, character);
 
-		TEST_METHOD(Not_Found)
-		{
-			char sentence[] = "This is a simple string";
-			char character = 'k';
+				Assert::AreEqual(&sentence[10], result);
+			}
 
-			char* result = mystrrchr(sentence, character);
+			TEST_METHOD(Not_Found)
+			{
+				char sentence[] = "This is a simple string";
+				char character = 'k';
 
-			Assert::AreEqual(nullptr, result);
-		}
-	};
+				char* result = mystrrchr(sentence, character);
+
+				Assert::AreEqual(nullptr, result);
+			}
+		};
+	}
 }

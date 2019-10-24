@@ -5,26 +5,29 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(MemSetTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Basic_Test)
+		TEST_CLASS(MemSetTest)
 		{
-			char str[] = "abc def ghi jkl mno";
+		public:
 
-			mymemset(str, 'x', 3);
+			TEST_METHOD(Basic_Test)
+			{
+				char str[] = "abc def ghi jkl mno";
 
-			Assert::AreEqual("xxx def ghi jkl mno", str);
-		}
+				mymemset(str, 'x', 3);
 
-		TEST_METHOD(Changing_In_The_Middle)
-		{
-			char str[] = "abc def ghi jkl mno";
+				Assert::AreEqual("xxx def ghi jkl mno", str);
+			}
 
-			mymemset(str + 8, 'x', 4);
+			TEST_METHOD(Changing_In_The_Middle)
+			{
+				char str[] = "abc def ghi jkl mno";
 
-			Assert::AreEqual("abc def xxxxjkl mno", str);
-		}
-	};
+				mymemset(str + 8, 'x', 4);
+
+				Assert::AreEqual("abc def xxxxjkl mno", str);
+			}
+		};
+	}
 }

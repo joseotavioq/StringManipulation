@@ -5,26 +5,29 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(StrLenTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Count_Elements_In_Char_Array)
+		TEST_CLASS(StrLenTest)
 		{
-			char mystr[] = "abc def ghi";
+		public:
 
-			int result = mystrlen(mystr);
+			TEST_METHOD(Count_Elements_In_Char_Array)
+			{
+				char mystr[] = "abc def ghi";
 
-			Assert::AreEqual(11, result);
-		}
+				int result = mystrlen(mystr);
 
-		TEST_METHOD(Count_Elements_In_A_Pre_Size_Defined_Array)
-		{
-			char mystr[10] = "ab";
+				Assert::AreEqual(11, result);
+			}
 
-			int result = mystrlen(mystr);
+			TEST_METHOD(Count_Elements_In_A_Pre_Size_Defined_Array)
+			{
+				char mystr[10] = "ab";
 
-			Assert::AreEqual(2, result);
-		}
-	};
+				int result = mystrlen(mystr);
+
+				Assert::AreEqual(2, result);
+			}
+		};
+	}
 }

@@ -5,44 +5,47 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(RevSubStrTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Invert_At_The_Beggining_Of_The_Content)
+		TEST_CLASS(RevSubStrTest)
 		{
-			char content[] = "abcefg";
+		public:
 
-			char* result = revsubstr(content, 0, 4);
+			TEST_METHOD(Invert_At_The_Beggining_Of_The_Content)
+			{
+				char content[] = "abcefg";
 
-			Assert::AreEqual("ecbafg", result);
-		}
+				char* result = revsubstr(content, 0, 4);
 
-		TEST_METHOD(Invert_In_The_Middle_Of_The_Content)
-		{
-			char content[] = "abcefg";
+				Assert::AreEqual("ecbafg", result);
+			}
 
-			char* result = revsubstr(content, 1, 3);
+			TEST_METHOD(Invert_In_The_Middle_Of_The_Content)
+			{
+				char content[] = "abcefg";
 
-			Assert::AreEqual("aecbfg", result);
-		}
+				char* result = revsubstr(content, 1, 3);
 
-		TEST_METHOD(Invert_In_The_End_Of_The_Content)
-		{
-			char content[] = "abcefg";
+				Assert::AreEqual("aecbfg", result);
+			}
 
-			char* result = revsubstr(content, 4, 2);
+			TEST_METHOD(Invert_In_The_End_Of_The_Content)
+			{
+				char content[] = "abcefg";
 
-			Assert::AreEqual("abcegf", result);
-		}
+				char* result = revsubstr(content, 4, 2);
 
-		TEST_METHOD(Invert_The_Entire_Content)
-		{
-			char content[] = "abcefg";
+				Assert::AreEqual("abcegf", result);
+			}
 
-			char* result = revsubstr(content, 0, 6);
+			TEST_METHOD(Invert_The_Entire_Content)
+			{
+				char content[] = "abcefg";
 
-			Assert::AreEqual("gfecba", result);
-		}
-	};
+				char* result = revsubstr(content, 0, 6);
+
+				Assert::AreEqual("gfecba", result);
+			}
+		};
+	}
 }

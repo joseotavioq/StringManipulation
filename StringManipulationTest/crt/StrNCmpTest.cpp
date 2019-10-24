@@ -5,68 +5,71 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(StrNCmpTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Both_Strings_Are_Equal)
+		TEST_CLASS(StrNCmpTest)
 		{
-			char str[] = "abc";
-			char str1[] = "abc";
+		public:
 
-			int result = mystrncmp(str, str1, 3);
+			TEST_METHOD(Both_Strings_Are_Equal)
+			{
+				char str[] = "abc";
+				char str1[] = "abc";
 
-			Assert::AreEqual(0, result);
-		}
+				int result = mystrncmp(str, str1, 3);
 
-		TEST_METHOD(First_String_Is_Less_Than_The_Other)
-		{
-			char str[] = "abc";
-			char str1[] = "acc";
+				Assert::AreEqual(0, result);
+			}
 
-			int result = mystrncmp(str, str1, 3);
+			TEST_METHOD(First_String_Is_Less_Than_The_Other)
+			{
+				char str[] = "abc";
+				char str1[] = "acc";
 
-			Assert::AreEqual(-1, result);
-		}
+				int result = mystrncmp(str, str1, 3);
 
-		TEST_METHOD(First_String_Is_Greater_Than_The_Other)
-		{
-			char str[] = "abc";
-			char str1[] = "aac";
+				Assert::AreEqual(-1, result);
+			}
 
-			int result = mystrncmp(str, str1, 3);
+			TEST_METHOD(First_String_Is_Greater_Than_The_Other)
+			{
+				char str[] = "abc";
+				char str1[] = "aac";
 
-			Assert::AreEqual(1, result);
-		}
+				int result = mystrncmp(str, str1, 3);
 
-		TEST_METHOD(End_Of_String_Reached)
-		{
-			char str[] = "abc";
-			char str1[] = "abc";
+				Assert::AreEqual(1, result);
+			}
 
-			int result = mystrncmp(str, str1, 4);
+			TEST_METHOD(End_Of_String_Reached)
+			{
+				char str[] = "abc";
+				char str1[] = "abc";
 
-			Assert::AreEqual(0, result);
-		}
+				int result = mystrncmp(str, str1, 4);
 
-		TEST_METHOD(End_Of_String_Reached_With_Different_Count_Of_Characters)
-		{
-			char str[] = "abc";
-			char str1[] = "ab";
+				Assert::AreEqual(0, result);
+			}
 
-			int result = mystrncmp(str, str1, 4);
+			TEST_METHOD(End_Of_String_Reached_With_Different_Count_Of_Characters)
+			{
+				char str[] = "abc";
+				char str1[] = "ab";
 
-			Assert::AreEqual(99, result);
-		}
+				int result = mystrncmp(str, str1, 4);
 
-		TEST_METHOD(The_Last_Character_Is_Different)
-		{
-			char str[] = "abcd";
-			char str1[] = "abce";
+				Assert::AreEqual(99, result);
+			}
 
-			int result = mystrncmp(str, str1, 4);
+			TEST_METHOD(The_Last_Character_Is_Different)
+			{
+				char str[] = "abcd";
+				char str1[] = "abce";
 
-			Assert::AreEqual(-1, result);
-		}
-	};
+				int result = mystrncmp(str, str1, 4);
+
+				Assert::AreEqual(-1, result);
+			}
+		};
+	}
 }

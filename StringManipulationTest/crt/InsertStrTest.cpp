@@ -5,27 +5,30 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(InsertStrTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Basic_Test)
+		TEST_CLASS(InsertStrTest)
 		{
-			char str[] = "abc def ghi jkl mno";
+		public:
 
-			insertstr(str, str + 4, 8);
+			TEST_METHOD(Basic_Test)
+			{
+				char str[] = "abc def ghi jkl mno";
 
-			Assert::AreEqual("abc def def ghi jkl", str);
-		}
+				insertstr(str, str + 4, 8);
 
-		TEST_METHOD(With_Two_Array_Of_Chars)
-		{
-			char str1[] = "Tests";
-			char str2[] = "ABCD";
+				Assert::AreEqual("abc def def ghi jkl", str);
+			}
 
-			insertstr(str1, str2, 0);
+			TEST_METHOD(With_Two_Array_Of_Chars)
+			{
+				char str1[] = "Tests";
+				char str2[] = "ABCD";
 
-			Assert::AreEqual("ABCDs", str1);
-		}
-	};
+				insertstr(str1, str2, 0);
+
+				Assert::AreEqual("ABCDs", str1);
+			}
+		};
+	}
 }

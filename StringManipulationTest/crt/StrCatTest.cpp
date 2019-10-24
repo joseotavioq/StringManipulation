@@ -5,30 +5,33 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(StrCatTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Cat_Two_Strings)
+		TEST_CLASS(StrCatTest)
 		{
-			char str1[19];
-			mystrcpy(str1, "To be ");
-			char str2[] = "or not to be";
+		public:
 
-			mystrcat(str1, str2);
+			TEST_METHOD(Cat_Two_Strings)
+			{
+				char str1[19];
+				mystrcpy(str1, "To be ");
+				char str2[] = "or not to be";
 
-			Assert::AreEqual("To be or not to be", str1);
-		}
+				mystrcat(str1, str2);
 
-		TEST_METHOD(Complex_Cat)
-		{
-			char str[80];
-			mystrcpy(str, "these ");
-			mystrcat(str, "strings ");
-			mystrcat(str, "are ");
-			mystrcat(str, "concatenated.");
+				Assert::AreEqual("To be or not to be", str1);
+			}
 
-			Assert::AreEqual("these strings are concatenated.", str);
-		}
-	};
+			TEST_METHOD(Complex_Cat)
+			{
+				char str[80];
+				mystrcpy(str, "these ");
+				mystrcat(str, "strings ");
+				mystrcat(str, "are ");
+				mystrcat(str, "concatenated.");
+
+				Assert::AreEqual("these strings are concatenated.", str);
+			}
+		};
+	}
 }

@@ -5,29 +5,32 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(StrCpyTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Basic_Test)
+		TEST_CLASS(StrCpyTest)
 		{
-			char str[] = "abc def ghi jkl mno";
-			char str1[20];
+		public:
 
-			mystrcpy(str1, str);
+			TEST_METHOD(Basic_Test)
+			{
+				char str[] = "abc def ghi jkl mno";
+				char str1[20];
 
-			Assert::AreEqual("abc def ghi jkl mno", str1);
-		}
+				mystrcpy(str1, str);
 
-		TEST_METHOD(Partial_Copy)
-		{
-			char str[] = "abc def ghi jkl mno";
-			char str1[20];
+				Assert::AreEqual("abc def ghi jkl mno", str1);
+			}
 
-			mystrcpy(str1, str);
-			str1[7] = '\0';
+			TEST_METHOD(Partial_Copy)
+			{
+				char str[] = "abc def ghi jkl mno";
+				char str1[20];
 
-			Assert::AreEqual("abc def", str1);
-		}
-	};
+				mystrcpy(str1, str);
+				str1[7] = '\0';
+
+				Assert::AreEqual("abc def", str1);
+			}
+		};
+	}
 }

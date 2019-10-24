@@ -5,35 +5,38 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(RemStrTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Remove_The_End_Of_A_String)
+		TEST_CLASS(RemStrTest)
 		{
-			char sentence[] = "The cat and the dog";
+		public:
 
-			char* result = remstr(sentence, 7, 12);
+			TEST_METHOD(Remove_The_End_Of_A_String)
+			{
+				char sentence[] = "The cat and the dog";
 
-			Assert::AreEqual("The cat", result);
-		}
+				char* result = remstr(sentence, 7, 12);
 
-		TEST_METHOD(Remove_The_Beggining_Of_A_String)
-		{
-			char sentence[] = "The cat and the dog";
+				Assert::AreEqual("The cat", result);
+			}
 
-			char* result = remstr(sentence, 0, 12);
+			TEST_METHOD(Remove_The_Beggining_Of_A_String)
+			{
+				char sentence[] = "The cat and the dog";
 
-			Assert::AreEqual("the dog", result);
-		}
+				char* result = remstr(sentence, 0, 12);
 
-		TEST_METHOD(Remove_The_Middle_Of_A_String)
-		{
-			char sentence[] = "The cat and the dog";
+				Assert::AreEqual("the dog", result);
+			}
 
-			char* result = remstr(sentence, 11, 4);
+			TEST_METHOD(Remove_The_Middle_Of_A_String)
+			{
+				char sentence[] = "The cat and the dog";
 
-			Assert::AreEqual("The cat and dog", result);
-		}
-	};
+				char* result = remstr(sentence, 11, 4);
+
+				Assert::AreEqual("The cat and dog", result);
+			}
+		};
+	}
 }

@@ -5,17 +5,20 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(RotStrTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Rotate_Left)
+		TEST_CLASS(RotStrTest)
 		{
-			char str[] = "abcdefg";
+		public:
 
-			char* result = rotstr(str);
+			TEST_METHOD(Rotate_Left)
+			{
+				char str[] = "abcdefg";
 
-			Assert::AreEqual("bcdefga", result);
-		}
-	};
+				char* result = rotstr(str);
+
+				Assert::AreEqual("bcdefga", result);
+			}
+		};
+	}
 }

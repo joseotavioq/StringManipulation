@@ -5,17 +5,20 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(MemCpyTest)
+	namespace CRT
 	{
-	public:
-		
-		TEST_METHOD(Basic_Test)
+		TEST_CLASS(MemCpyTest)
 		{
-			char src[] = "First";
-			char dst[] = "Second";
-			mymemcpy(src, dst, 3);
+		public:
 
-			Assert::AreEqual("Firond", dst);
-		}
-	};
+			TEST_METHOD(Basic_Test)
+			{
+				char src[] = "First";
+				char dst[] = "Second";
+				mymemcpy(src, dst, 3);
+
+				Assert::AreEqual("Firond", dst);
+			}
+		};
+	}
 }

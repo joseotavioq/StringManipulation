@@ -5,44 +5,47 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(HexStrToUiTst)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Convert_0x00A1_To_Int_161)
+		TEST_CLASS(HexStrToUiTst)
 		{
-			char value[] = "0x00A1";
+		public:
 
-			int result = hexstrtoui(value);
+			TEST_METHOD(Convert_0x00A1_To_Int_161)
+			{
+				char value[] = "0x00A1";
 
-			Assert::AreEqual(161, result);
-		}
+				int result = hexstrtoui(value);
 
-		TEST_METHOD(Convert_0x9A82_To_Int_39554)
-		{
-			char value[] = "0x9a82";
+				Assert::AreEqual(161, result);
+			}
 
-			int result = hexstrtoui(value);
+			TEST_METHOD(Convert_0x9A82_To_Int_39554)
+			{
+				char value[] = "0x9a82";
 
-			Assert::AreEqual(39554, result);
-		}
+				int result = hexstrtoui(value);
 
-		TEST_METHOD(Convert_0xB28_To_Int_2856)
-		{
-			char value[] = "0xB28";
+				Assert::AreEqual(39554, result);
+			}
 
-			int result = hexstrtoui(value);
+			TEST_METHOD(Convert_0xB28_To_Int_2856)
+			{
+				char value[] = "0xB28";
 
-			Assert::AreEqual(2856, result);
-		}
+				int result = hexstrtoui(value);
 
-		TEST_METHOD(Convert_0x25_To_Int_37)
-		{
-			char value[] = "0x25";
+				Assert::AreEqual(2856, result);
+			}
 
-			int result = hexstrtoui(value);
+			TEST_METHOD(Convert_0x25_To_Int_37)
+			{
+				char value[] = "0x25";
 
-			Assert::AreEqual(37, result);
-		}
-	};
+				int result = hexstrtoui(value);
+
+				Assert::AreEqual(37, result);
+			}
+		};
+	}
 }

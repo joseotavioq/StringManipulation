@@ -5,64 +5,67 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(MemMoveTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Same_Array_With_Src_Greater_Than_Dst)
+		TEST_CLASS(MemMoveTest)
 		{
-			char str[] = "abc def ghi jkl mno";
+		public:
 
-			mymemmove(str + 4, str + 8, 11);
+			TEST_METHOD(Same_Array_With_Src_Greater_Than_Dst)
+			{
+				char str[] = "abc def ghi jkl mno";
 
-			Assert::AreEqual("abc def def ghi jkl", str);
-		}
+				mymemmove(str + 4, str + 8, 11);
 
-		TEST_METHOD(Same_Array_With_Dst_Greater_Than_Src)
-		{
-			char str[] = "abc def ghi jkl mno";
+				Assert::AreEqual("abc def def ghi jkl", str);
+			}
 
-			mymemmove(str + 8, str + 7, 3);
+			TEST_METHOD(Same_Array_With_Dst_Greater_Than_Src)
+			{
+				char str[] = "abc def ghi jkl mno";
 
-			Assert::AreEqual("abc defghii jkl mno", str);
-		}
+				mymemmove(str + 8, str + 7, 3);
 
-		TEST_METHOD(With_Two_Array_Of_Char)
-		{
-			char str1[] = "Tests";
-			char str2[] = "ABCD";
+				Assert::AreEqual("abc defghii jkl mno", str);
+			}
 
-			mymemmove(str2, str1, 5);
+			TEST_METHOD(With_Two_Array_Of_Char)
+			{
+				char str1[] = "Tests";
+				char str2[] = "ABCD";
 
-			Assert::AreEqual("ABCD", str1);
-		}
+				mymemmove(str2, str1, 5);
 
-		TEST_METHOD(Without_Memory_Allocation_Same_Array_With_Src_Greater_Than_Dst)
-		{
-			char str[] = "abc def ghi jkl mno";
+				Assert::AreEqual("ABCD", str1);
+			}
 
-			mymemmove_without_memory_allocation(str + 4, str + 8, 11);
+			TEST_METHOD(Without_Memory_Allocation_Same_Array_With_Src_Greater_Than_Dst)
+			{
+				char str[] = "abc def ghi jkl mno";
 
-			Assert::AreEqual("abc def def ghi jkl", str);
-		}
+				mymemmove_without_memory_allocation(str + 4, str + 8, 11);
 
-		TEST_METHOD(Without_Memory_Allocation_Same_Array_With_Dst_Greater_Than_Src)
-		{
-			char str[] = "abc def ghi jkl mno";
+				Assert::AreEqual("abc def def ghi jkl", str);
+			}
 
-			mymemmove_without_memory_allocation(str + 8, str + 7, 3);
+			TEST_METHOD(Without_Memory_Allocation_Same_Array_With_Dst_Greater_Than_Src)
+			{
+				char str[] = "abc def ghi jkl mno";
 
-			Assert::AreEqual("abc defghii jkl mno", str);
-		}
+				mymemmove_without_memory_allocation(str + 8, str + 7, 3);
 
-		TEST_METHOD(Without_Memory_Allocation_With_Two_Array_Of_Char)
-		{
-			char str1[] = "Tests";
-			char str2[] = "ABCD";
+				Assert::AreEqual("abc defghii jkl mno", str);
+			}
 
-			mymemmove_without_memory_allocation(str2, str1, 5);
+			TEST_METHOD(Without_Memory_Allocation_With_Two_Array_Of_Char)
+			{
+				char str1[] = "Tests";
+				char str2[] = "ABCD";
 
-			Assert::AreEqual("ABCD", str1);
-		}
-	};
+				mymemmove_without_memory_allocation(str2, str1, 5);
+
+				Assert::AreEqual("ABCD", str1);
+			}
+		};
+	}
 }

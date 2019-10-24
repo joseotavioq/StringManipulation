@@ -5,26 +5,29 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(ItoaTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Convert_Simple_Number)
+		TEST_CLASS(ItoaTest)
 		{
-			char text[4];
+		public:
 
-			myitoa(129, text);
+			TEST_METHOD(Convert_Simple_Number)
+			{
+				char text[4];
 
-			Assert::AreEqual("129", text);
-		}
+				myitoa(129, text);
 
-		TEST_METHOD(Convert_Negative_Number)
-		{
-			char text[5];
+				Assert::AreEqual("129", text);
+			}
 
-			myitoa(-129, text);
+			TEST_METHOD(Convert_Negative_Number)
+			{
+				char text[5];
 
-			Assert::AreEqual("-129", text);
-		}
-	};
+				myitoa(-129, text);
+
+				Assert::AreEqual("-129", text);
+			}
+		};
+	}
 }

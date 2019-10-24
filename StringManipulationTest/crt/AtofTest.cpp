@@ -5,35 +5,38 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(AtofTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Convert_Simple_Number)
+		TEST_CLASS(AtofTest)
 		{
-			char text[] = "129.09";
+		public:
 
-			float number = myatof(text);
+			TEST_METHOD(Convert_Simple_Number)
+			{
+				char text[] = "129.09";
 
-			Assert::AreEqual(129.09f, number);
-		}
+				float number = myatof(text);
 
-		TEST_METHOD(Convert_Negative_Number)
-		{
-			char text[] = "-129.8";
+				Assert::AreEqual(129.09f, number);
+			}
 
-			float number = myatof(text);
+			TEST_METHOD(Convert_Negative_Number)
+			{
+				char text[] = "-129.8";
 
-			Assert::AreEqual(-129.8f, number);
-		}
+				float number = myatof(text);
 
-		TEST_METHOD(Convert_Number_Inside_Other_Chars)
-		{
-			char text[] = "  129.73   ";
+				Assert::AreEqual(-129.8f, number);
+			}
 
-			float number = myatof(text);
+			TEST_METHOD(Convert_Number_Inside_Other_Chars)
+			{
+				char text[] = "  129.73   ";
 
-			Assert::AreEqual(129.73f, number);
-		}
-	};
+				float number = myatof(text);
+
+				Assert::AreEqual(129.73f, number);
+			}
+		};
+	}
 }

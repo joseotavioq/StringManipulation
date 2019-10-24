@@ -5,78 +5,81 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(StrICmpTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Both_Strings_Are_Equal)
+		TEST_CLASS(StrICmpTest)
 		{
-			char str[] = "ABC";
-			char str1[] = "abc";
+		public:
 
-			int result = mystricmp(str, str1);
+			TEST_METHOD(Both_Strings_Are_Equal)
+			{
+				char str[] = "ABC";
+				char str1[] = "abc";
 
-			Assert::AreEqual(0, result);
-		}
+				int result = mystricmp(str, str1);
 
-		TEST_METHOD(Both_Strings_In_Lowercase_Are_Equal)
-		{
-			char str[] = "abc";
-			char str1[] = "abc";
+				Assert::AreEqual(0, result);
+			}
 
-			int result = mystricmp(str, str1);
+			TEST_METHOD(Both_Strings_In_Lowercase_Are_Equal)
+			{
+				char str[] = "abc";
+				char str1[] = "abc";
 
-			Assert::AreEqual(0, result);
-		}
+				int result = mystricmp(str, str1);
 
-		TEST_METHOD(First_String_Is_Less_Than_The_Other)
-		{
-			char str[] = "abc";
-			char str1[] = "ACC";
+				Assert::AreEqual(0, result);
+			}
 
-			int result = mystricmp(str, str1);
+			TEST_METHOD(First_String_Is_Less_Than_The_Other)
+			{
+				char str[] = "abc";
+				char str1[] = "ACC";
 
-			Assert::AreEqual(-1, result);
-		}
+				int result = mystricmp(str, str1);
 
-		TEST_METHOD(First_String_Is_Greater_Than_The_Other)
-		{
-			char str[] = "ABC";
-			char str1[] = "aac";
+				Assert::AreEqual(-1, result);
+			}
 
-			int result = mystricmp(str, str1);
+			TEST_METHOD(First_String_Is_Greater_Than_The_Other)
+			{
+				char str[] = "ABC";
+				char str1[] = "aac";
 
-			Assert::AreEqual(1, result);
-		}
+				int result = mystricmp(str, str1);
 
-		TEST_METHOD(End_Of_String_Reached)
-		{
-			char str[] = "abc";
-			char str1[] = "ABC";
+				Assert::AreEqual(1, result);
+			}
 
-			int result = mystricmp(str, str1);
+			TEST_METHOD(End_Of_String_Reached)
+			{
+				char str[] = "abc";
+				char str1[] = "ABC";
 
-			Assert::AreEqual(0, result);
-		}
+				int result = mystricmp(str, str1);
 
-		TEST_METHOD(End_Of_String_Reached_With_Different_Count_Of_Characters)
-		{
-			char str[] = "abc";
-			char str1[] = "AB";
+				Assert::AreEqual(0, result);
+			}
 
-			int result = mystricmp(str, str1);
+			TEST_METHOD(End_Of_String_Reached_With_Different_Count_Of_Characters)
+			{
+				char str[] = "abc";
+				char str1[] = "AB";
 
-			Assert::AreEqual(99, result);
-		}
+				int result = mystricmp(str, str1);
 
-		TEST_METHOD(The_Last_Character_Is_Different)
-		{
-			char str[] = "ABCD";
-			char str1[] = "abce";
+				Assert::AreEqual(99, result);
+			}
 
-			int result = mystricmp(str, str1);
+			TEST_METHOD(The_Last_Character_Is_Different)
+			{
+				char str[] = "ABCD";
+				char str1[] = "abce";
 
-			Assert::AreEqual(-1, result);
-		}
-	};
+				int result = mystricmp(str, str1);
+
+				Assert::AreEqual(-1, result);
+			}
+		};
+	}
 }

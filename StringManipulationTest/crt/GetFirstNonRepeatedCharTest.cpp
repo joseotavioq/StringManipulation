@@ -5,35 +5,38 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(GetFirstNonRepeatedCharTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Get_o_from_str_total)
+		TEST_CLASS(GetFirstNonRepeatedCharTest)
 		{
-			char str[] = "total";
+		public:
 
-			char result = GetFirstNonRepeatedChar(str);
+			TEST_METHOD(Get_o_from_str_total)
+			{
+				char str[] = "total";
 
-			Assert::AreEqual('o', result);
-		}
+				char result = GetFirstNonRepeatedChar(str);
 
-		TEST_METHOD(Get_a_from_str_abcdef)
-		{
-			char str[] = "abcdef";
+				Assert::AreEqual('o', result);
+			}
 
-			char result = GetFirstNonRepeatedChar(str);
+			TEST_METHOD(Get_a_from_str_abcdef)
+			{
+				char str[] = "abcdef";
 
-			Assert::AreEqual('a', result);
-		}
+				char result = GetFirstNonRepeatedChar(str);
 
-		TEST_METHOD(Get_c_from_str_aabbcd)
-		{
-			char str[] = "aabbcd";
+				Assert::AreEqual('a', result);
+			}
 
-			char result = GetFirstNonRepeatedChar(str);
+			TEST_METHOD(Get_c_from_str_aabbcd)
+			{
+				char str[] = "aabbcd";
 
-			Assert::AreEqual('c', result);
-		}
-	};
+				char result = GetFirstNonRepeatedChar(str);
+
+				Assert::AreEqual('c', result);
+			}
+		};
+	}
 }

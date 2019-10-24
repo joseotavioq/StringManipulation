@@ -5,38 +5,41 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(RemCharsTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Remove_Chars_Contained_In_The_Second_Parameter)
+		TEST_CLASS(RemCharsTest)
 		{
-			char str[] = "abcdefg";
-			char ctrl[] = "ac";
+		public:
 
-			char* result = remchars(str, ctrl, 2);
+			TEST_METHOD(Remove_Chars_Contained_In_The_Second_Parameter)
+			{
+				char str[] = "abcdefg";
+				char ctrl[] = "ac";
 
-			Assert::AreEqual("bdefg", result);
-		}
+				char* result = remchars(str, ctrl, 2);
 
-		TEST_METHOD(Remove_Almost_Every_Char_That_Contained_In_The_Second_Parameter)
-		{
-			char str[] = "abcdefg";
-			char ctrl[] = "acdfg";
+				Assert::AreEqual("bdefg", result);
+			}
 
-			char* result = remchars(str, ctrl, 5);
+			TEST_METHOD(Remove_Almost_Every_Char_That_Contained_In_The_Second_Parameter)
+			{
+				char str[] = "abcdefg";
+				char ctrl[] = "acdfg";
 
-			Assert::AreEqual("be", result);
-		}
+				char* result = remchars(str, ctrl, 5);
 
-		TEST_METHOD(Remove_All_Chars_Contained_In_The_Second_Parameter)
-		{
-			char str[] = "abcdefg";
-			char ctrl[] = "gfedcba";
+				Assert::AreEqual("be", result);
+			}
 
-			char* result = remchars(str, ctrl, 7);
+			TEST_METHOD(Remove_All_Chars_Contained_In_The_Second_Parameter)
+			{
+				char str[] = "abcdefg";
+				char ctrl[] = "gfedcba";
 
-			Assert::AreEqual("", result);
-		}
-	};
+				char* result = remchars(str, ctrl, 7);
+
+				Assert::AreEqual("", result);
+			}
+		};
+	}
 }

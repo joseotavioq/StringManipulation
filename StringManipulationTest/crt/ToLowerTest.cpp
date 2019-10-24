@@ -5,29 +5,32 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(ToLowerTest)
+	namespace CRT
 	{
-	public:
-		
-		TEST_METHOD(With_UpperCase_Char)
+		TEST_CLASS(ToLowerTest)
 		{
-			char result = mytolower('J');
+		public:
 
-			Assert::AreEqual('j', result);
-		}
+			TEST_METHOD(With_UpperCase_Char)
+			{
+				char result = mytolower('J');
 
-		TEST_METHOD(With_LowerCase_Char)
-		{
-			char result = mytolower('j');
+				Assert::AreEqual('j', result);
+			}
 
-			Assert::AreEqual('j', result);
-		}
+			TEST_METHOD(With_LowerCase_Char)
+			{
+				char result = mytolower('j');
 
-		TEST_METHOD(Another_Char)
-		{
-			char result = mytolower('1');
+				Assert::AreEqual('j', result);
+			}
 
-			Assert::AreEqual('1', result);
-		}
-	};
+			TEST_METHOD(Another_Char)
+			{
+				char result = mytolower('1');
+
+				Assert::AreEqual('1', result);
+			}
+		};
+	}
 }

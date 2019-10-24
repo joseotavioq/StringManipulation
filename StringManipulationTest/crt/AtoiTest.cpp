@@ -5,35 +5,38 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(AtoiTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Convert_Simple_Number)
+		TEST_CLASS(AtoiTest)
 		{
-			char text[] = "129";
+		public:
 
-			int number = myatoi(text);
+			TEST_METHOD(Convert_Simple_Number)
+			{
+				char text[] = "129";
 
-			Assert::AreEqual(129, number);
-		}
+				int number = myatoi(text);
 
-		TEST_METHOD(Convert_Negative_Number)
-		{
-			char text[] = "-129";
+				Assert::AreEqual(129, number);
+			}
 
-			int number = myatoi(text);
+			TEST_METHOD(Convert_Negative_Number)
+			{
+				char text[] = "-129";
 
-			Assert::AreEqual(-129, number);
-		}
+				int number = myatoi(text);
 
-		TEST_METHOD(Convert_Number_Inside_Other_Chars)
-		{
-			char text[] = "  129   ";
+				Assert::AreEqual(-129, number);
+			}
 
-			int number = myatoi(text);
+			TEST_METHOD(Convert_Number_Inside_Other_Chars)
+			{
+				char text[] = "  129   ";
 
-			Assert::AreEqual(129, number);
-		}
-	};
+				int number = myatoi(text);
+
+				Assert::AreEqual(129, number);
+			}
+		};
+	}
 }

@@ -5,17 +5,20 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace StringManipulationTest
 {
-	TEST_CLASS(SwapCharsTest)
+	namespace CRT
 	{
-	public:
-
-		TEST_METHOD(Swap_Chars)
+		TEST_CLASS(SwapCharsTest)
 		{
-			char sentence[] = "This is a simple string";
+		public:
 
-			swapchars(sentence, 5, 12);
+			TEST_METHOD(Swap_Chars)
+			{
+				char sentence[] = "This is a simple string";
 
-			Assert::AreEqual("This ms a siiple string", sentence);
-		}
-	};
+				swapchars(sentence, 5, 12);
+
+				Assert::AreEqual("This ms a siiple string", sentence);
+			}
+		};
+	}
 }
