@@ -21,12 +21,18 @@
     <ClCompile Include="crt.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="arrays.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="crt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StringManipulation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="arrays.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
