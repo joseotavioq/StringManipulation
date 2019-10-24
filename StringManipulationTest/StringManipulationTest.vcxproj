@@ -89,7 +89,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -161,50 +161,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AtofTest.cpp" />
-    <ClCompile Include="AtoiTest.cpp" />
-    <ClCompile Include="FtoaTest.cpp" />
-    <ClCompile Include="GetFirstNonRepeatedCharTest.cpp" />
-    <ClCompile Include="HexStrToUiTst.cpp" />
-    <ClCompile Include="InsertStrTest.cpp" />
-    <ClCompile Include="ItoaTest.cpp" />
-    <ClCompile Include="ItoStrBinTest.cpp" />
-    <ClCompile Include="ItoStrHexTest.cpp" />
-    <ClCompile Include="MemCpyTest.cpp" />
-    <ClCompile Include="MemMoveTest.cpp" />
-    <ClCompile Include="MemSetTest.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="RemCharsTest.cpp" />
-    <ClCompile Include="RemStrTest.cpp" />
-    <ClCompile Include="RevStrTest.cpp" />
-    <ClCompile Include="RevSubStrTest.cpp" />
-    <ClCompile Include="RevWrdTest.cpp" />
-    <ClCompile Include="RotCharsTest.cpp" />
-    <ClCompile Include="RotNStrTest.cpp" />
-    <ClCompile Include="RotStrTest.cpp" />
-    <ClCompile Include="StrCatTest.cpp" />
-    <ClCompile Include="StrChrTest.cpp" />
-    <ClCompile Include="StrCmpTest.cpp" />
-    <ClCompile Include="StrCpyTest.cpp" />
-    <ClCompile Include="StrICmpTest.cpp" />
-    <ClCompile Include="StrLenTest.cpp" />
-    <ClCompile Include="StrNCatTest.cpp" />
-    <ClCompile Include="StrNCmpTest.cpp" />
-    <ClCompile Include="StrNCpyTest.cpp" />
-    <ClCompile Include="StrRChrTest.cpp" />
-    <ClCompile Include="StrSpnTest.cpp" />
-    <ClCompile Include="StrStrTest.cpp" />
-    <ClCompile Include="SwapCharsTest.cpp" />
-    <ClCompile Include="ToLowerTest.cpp" />
-    <ClCompile Include="ToUpperTest.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="pch.h" />
+    <ClCompile Include="crt\AtofTest.cpp" />
+    <ClCompile Include="crt\AtoiTest.cpp" />
+    <ClCompile Include="crt\FtoaTest.cpp" />
+    <ClCompile Include="crt\GetFirstNonRepeatedCharTest.cpp" />
+    <ClCompile Include="crt\HexStrToUiTst.cpp" />
+    <ClCompile Include="crt\InsertStrTest.cpp" />
+    <ClCompile Include="crt\ItoaTest.cpp" />
+    <ClCompile Include="crt\ItoStrBinTest.cpp" />
+    <ClCompile Include="crt\ItoStrHexTest.cpp" />
+    <ClCompile Include="crt\MemCpyTest.cpp" />
+    <ClCompile Include="crt\MemMoveTest.cpp" />
+    <ClCompile Include="crt\MemSetTest.cpp" />
+    <ClCompile Include="crt\RemCharsTest.cpp" />
+    <ClCompile Include="crt\RemStrTest.cpp" />
+    <ClCompile Include="crt\RevStrTest.cpp" />
+    <ClCompile Include="crt\RevSubStrTest.cpp" />
+    <ClCompile Include="crt\RevWrdTest.cpp" />
+    <ClCompile Include="crt\RotCharsTest.cpp" />
+    <ClCompile Include="crt\RotNStrTest.cpp" />
+    <ClCompile Include="crt\RotStrTest.cpp" />
+    <ClCompile Include="crt\StrCatTest.cpp" />
+    <ClCompile Include="crt\StrChrTest.cpp" />
+    <ClCompile Include="crt\StrCmpTest.cpp" />
+    <ClCompile Include="crt\StrCpyTest.cpp" />
+    <ClCompile Include="crt\StrICmpTest.cpp" />
+    <ClCompile Include="crt\StrLenTest.cpp" />
+    <ClCompile Include="crt\StrNCatTest.cpp" />
+    <ClCompile Include="crt\StrNCmpTest.cpp" />
+    <ClCompile Include="crt\StrNCpyTest.cpp" />
+    <ClCompile Include="crt\StrRChrTest.cpp" />
+    <ClCompile Include="crt\StrSpnTest.cpp" />
+    <ClCompile Include="crt\StrStrTest.cpp" />
+    <ClCompile Include="crt\SwapCharsTest.cpp" />
+    <ClCompile Include="crt\ToLowerTest.cpp" />
+    <ClCompile Include="crt\ToUpperTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StringManipulation\StringManipulation.vcxproj">

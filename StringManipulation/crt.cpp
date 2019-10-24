@@ -416,7 +416,7 @@ void myftoa(const float fval, char* szval)
 
 	int posOfPeriod = 0;
 	float onlyDecimal = fval;
-	int result = onlyDecimal;
+	int result = (int)onlyDecimal;
 
 	if (result < 0)
 	{
@@ -431,7 +431,7 @@ void myftoa(const float fval, char* szval)
 	{
 		onlyDecimal *= 10;
 		posOfPeriod++;
-		result = onlyDecimal;
+		result = (int)onlyDecimal;
 	}
 
 	do
@@ -692,7 +692,7 @@ char* remchars(char* str, char ctrl[], unsigned int size)
 
 char* insertstr(char* dst, const char* src, unsigned int pos)
 {
-	int length = mystrlen(src);
+	unsigned int length = mystrlen(src);
 
 	void* tmp = malloc(sizeof(char) * length);
 

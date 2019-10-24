@@ -15,118 +15,110 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
+    <ClCompile Include="crt\MemSetTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ToLowerTest.cpp">
+    <ClCompile Include="crt\AtoiTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ToUpperTest.cpp">
+    <ClCompile Include="crt\FtoaTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MemCpyTest.cpp">
+    <ClCompile Include="crt\GetFirstNonRepeatedCharTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MemMoveTest.cpp">
+    <ClCompile Include="crt\HexStrToUiTst.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MemSetTest.cpp">
+    <ClCompile Include="crt\InsertStrTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StrNCpyTest.cpp">
+    <ClCompile Include="crt\ItoaTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StrNCmpTest.cpp">
+    <ClCompile Include="crt\ItoStrBinTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StrNCatTest.cpp">
+    <ClCompile Include="crt\ItoStrHexTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StrLenTest.cpp">
+    <ClCompile Include="crt\MemCpyTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StrCpyTest.cpp">
+    <ClCompile Include="crt\MemMoveTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StrCmpTest.cpp">
+    <ClCompile Include="crt\AtofTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StrICmpTest.cpp">
+    <ClCompile Include="crt\RemCharsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StrCatTest.cpp">
+    <ClCompile Include="crt\RemStrTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StrStrTest.cpp">
+    <ClCompile Include="crt\RevStrTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StrRChrTest.cpp">
+    <ClCompile Include="crt\RevSubStrTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StrChrTest.cpp">
+    <ClCompile Include="crt\RevWrdTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StrSpnTest.cpp">
+    <ClCompile Include="crt\RotCharsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AtoiTest.cpp">
+    <ClCompile Include="crt\RotNStrTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RevStrTest.cpp">
+    <ClCompile Include="crt\RotStrTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SwapCharsTest.cpp">
+    <ClCompile Include="crt\StrCatTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HexStrToUiTst.cpp">
+    <ClCompile Include="crt\StrChrTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RevSubStrTest.cpp">
+    <ClCompile Include="crt\StrCmpTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RevWrdTest.cpp">
+    <ClCompile Include="crt\StrCpyTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ItoStrHexTest.cpp">
+    <ClCompile Include="crt\StrICmpTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RemStrTest.cpp">
+    <ClCompile Include="crt\StrLenTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GetFirstNonRepeatedCharTest.cpp">
+    <ClCompile Include="crt\StrNCatTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ItoaTest.cpp">
+    <ClCompile Include="crt\StrNCmpTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InsertStrTest.cpp">
+    <ClCompile Include="crt\StrNCpyTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FtoaTest.cpp">
+    <ClCompile Include="crt\StrRChrTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RemCharsTest.cpp">
+    <ClCompile Include="crt\StrSpnTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RotStrTest.cpp">
+    <ClCompile Include="crt\StrStrTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RotNStrTest.cpp">
+    <ClCompile Include="crt\SwapCharsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RotCharsTest.cpp">
+    <ClCompile Include="crt\ToLowerTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AtofTest.cpp">
+    <ClCompile Include="crt\ToUpperTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ItoStrBinTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
