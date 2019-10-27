@@ -4,10 +4,10 @@
 // BIT OPERATIONS AND ARRAY EXERCISES =================================
 
 /******************************************************************************
-Print the binary representation of an integer, separating the bytes.
+Returns the binary representation of an integer, separating the bytes.
 ie: PrintBits( 65000 ) == 1111 1101 1110 1000
 */
-void PrintBits(unsigned number);
+char* PrintBits(unsigned int number);
 
 /******************************************************************************
 Get the count of bits set in a register (use unsigned char for convenience).

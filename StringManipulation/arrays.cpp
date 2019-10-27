@@ -1,8 +1,40 @@
 #include "arrays.h"
+#include "crt.h"
+#include <stdlib.h>
 
-void PrintBits(unsigned number)
+char* PrintBits(unsigned int number)
 {
+	void* tmp = malloc(sizeof(char) * 20);
 
+	if (tmp != NULL)
+	{
+		char* tmpChar = (char*)tmp;
+
+		int index = 0;
+		int includeSpace = 0;
+		while (number > 0)
+		{
+			if (includeSpace == 4)
+			{
+				*(tmpChar + index) = ' ';
+				index++;
+				includeSpace = 0;
+			}
+			includeSpace++;
+
+			int mod = number % 2;
+			number /= 2;
+
+			*(tmpChar + index) = mod + '0';
+			index++;
+		}
+
+		*(tmpChar + index) = '\0';
+
+		return revstr(tmpChar);
+	}
+
+	return nullptr;
 }
 
 unsigned int GetBitSetCount(unsigned long reg)
@@ -13,6 +45,9 @@ unsigned int GetBitSetCount(unsigned long reg)
 
 BoolArray::BoolArray(unsigned int size)
 {
+	m_Array = 0;
+	m_size = size;
+	m_bitmaps = 0;
 }
 
 void BoolArray::Set(unsigned int index)
