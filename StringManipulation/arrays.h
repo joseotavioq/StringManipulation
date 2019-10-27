@@ -38,7 +38,7 @@ public:
 /******************************************************************************
 Get the subvector in a vector of integers that maximizes the sum of contiguous
 elements and the value of the sum.   O( n^2)
-ie: A[] = { 1, -2, 3, 4 }  maxsumvec( A ) ==> position( 2, 3 ), max = 5
+ie: A[] = { 1, -2, 3, 4 }  maxsumvec( A ) ==> position( 2, 3 ), max = 7
 */
 struct VectorInfo { int StartIndex; int Count; int Sum; VectorInfo(int, int, int); };
 VectorInfo* GetMaxSumVector_n2(int A[], unsigned int size);

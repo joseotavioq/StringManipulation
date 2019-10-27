@@ -65,9 +65,36 @@ bool BoolArray::Get(unsigned int index)
 	return true;
 }
 
+VectorInfo::VectorInfo(int startIndex, int count, int sum)
+{
+	StartIndex = startIndex;
+	Count = count;
+	Sum = sum;
+}
+
 VectorInfo* GetMaxSumVector_n2(int A[], unsigned int size)
 {
-	return nullptr;
+	int startIndex = 0;
+	int countOfElements = 0;
+	int maxSum = A[0];
+
+	for (size_t i = 0; i < size; i++)
+	{
+		int sum = 0;
+		for (size_t j = i; j < size; j++)
+		{
+			sum += A[j];
+
+			if (sum > maxSum)
+			{
+				maxSum = sum;
+				startIndex = i;
+				countOfElements = j;
+			}
+		}
+	}
+
+	return new VectorInfo(startIndex, countOfElements - startIndex, maxSum);
 }
 
 VectorInfo* GetMaxSumVector_n(int A[], unsigned int size)

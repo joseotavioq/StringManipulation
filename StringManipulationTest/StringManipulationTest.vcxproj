@@ -162,6 +162,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="arrays\PrintBitsTest.cpp" />
+    <ClCompile Include="arrays\VectorInfoTest.cpp" />
     <ClCompile Include="crt\AtofTest.cpp" />
     <ClCompile Include="crt\AtoiTest.cpp" />
     <ClCompile Include="crt\FtoaTest.cpp" />
