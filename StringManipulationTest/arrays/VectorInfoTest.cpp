@@ -21,6 +21,17 @@ namespace StringManipulationTest
 				Assert::AreEqual(1, result->Count);
 				Assert::AreEqual(7, result->Sum);
 			}
+
+			TEST_METHOD(Call_Method_GetMaxSumVector_n)
+			{
+				int A[] = { 1, -2, 3, 4 };
+
+				VectorInfo* result = GetMaxSumVector_n(A, 4);
+
+				Assert::AreEqual(2, result->StartIndex);
+				Assert::AreEqual(1, result->Count);
+				Assert::AreEqual(7, result->Sum);
+			}
 		};
 	}
 }

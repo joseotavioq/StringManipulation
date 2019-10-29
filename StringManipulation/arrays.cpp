@@ -99,7 +99,22 @@ VectorInfo* GetMaxSumVector_n2(int A[], unsigned int size)
 
 VectorInfo* GetMaxSumVector_n(int A[], unsigned int size)
 {
-	return nullptr;
+	int startIndex = 0;
+	int countOfElements = 0;
+	int maxSum = A[0];
+
+	for (size_t i = 0; i < size - 1; i++)
+	{
+		int sum = A[i] + A[i + 1];
+		if (sum > maxSum)
+		{
+			maxSum = sum;
+			startIndex = i;
+			countOfElements = i + 1;
+		}
+	}
+
+	return new VectorInfo(startIndex, countOfElements - startIndex, maxSum);
 }
 
 void PrintVector(int A[], unsigned int lowPos, unsigned int hiPos, int maxSum, bool printNegative)
