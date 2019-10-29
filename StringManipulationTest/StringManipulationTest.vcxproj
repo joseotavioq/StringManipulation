@@ -161,6 +161,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="arrays\CompressArrayTest.cpp" />
     <ClCompile Include="arrays\PrintBitsTest.cpp" />
     <ClCompile Include="arrays\VectorInfoTest.cpp" />
     <ClCompile Include="crt\AtofTest.cpp" />

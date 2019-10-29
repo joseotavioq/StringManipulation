@@ -124,7 +124,14 @@ void PrintVector(int A[], unsigned int lowPos, unsigned int hiPos, int maxSum, b
 
 void CompressArray(int Array[], unsigned int& size)
 {
-
+	int indexOfCompressed = 0;
+	for (size_t i = 0; i < size - 1; i++)
+	{
+		if (Array[indexOfCompressed] != Array[i])
+		{
+			Array[++indexOfCompressed] = Array[i];
+		}
+	}
 }
 
 void CompressArrayEx(int Array[], unsigned int& size)
