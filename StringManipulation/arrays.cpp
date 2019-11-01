@@ -201,7 +201,18 @@ int GetDup(int a[], int size)
 
 int GetContiguousDup_n_formula(int a[], int size)
 {
-	return 0;
+	int result = -1;
+
+	for (int i = 0; i < size - 1; i++)
+	{
+		if (a[i] == a[i + 1])
+		{
+			result = i + 1;
+			break;
+		}
+	}
+
+	return result;
 }
 
 int GetContiguousDup_nlogn_loop(int a[], int size)
