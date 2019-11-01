@@ -137,7 +137,27 @@ void CompressArray(int Array[], unsigned int& size)
 
 void CompressArrayEx(int Array[], unsigned int& size)
 {
+	int indexOfCompressed = 1;
+	for (size_t i = 1; i < size; i++)
+	{
+		bool valueAlreadyExists = false;
 
+		for (size_t j = 0; j < indexOfCompressed; j++)
+		{
+			if (i != j && Array[i] == Array[j])
+			{
+				valueAlreadyExists = true;
+				break;
+			}
+		}
+
+		if (!valueAlreadyExists)
+		{
+			Array[indexOfCompressed] = Array[i];
+			indexOfCompressed++;
+		}
+	}
+	size = indexOfCompressed;
 }
 
 int* CopyArrays(int A[], unsigned int a, int B[], unsigned int b, int* C)
