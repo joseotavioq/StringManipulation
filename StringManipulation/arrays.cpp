@@ -182,7 +182,21 @@ int* CopyArrays(int A[], unsigned int a, int B[], unsigned int b, int* C)
 
 int GetDup(int a[], int size)
 {
-	return 0;
+	int result = -1;
+
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = i + 1; j < size; j++)
+		{
+			if (a[i] == a[j])
+			{
+				result = j;
+				break;
+			}
+		}
+	}
+
+	return result;
 }
 
 int GetContiguousDup_n_formula(int a[], int size)
