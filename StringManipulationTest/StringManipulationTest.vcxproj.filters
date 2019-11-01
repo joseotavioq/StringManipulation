@@ -132,5 +132,8 @@
     <ClCompile Include="arrays\CompressArrayExTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="arrays\CopyArraysTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
