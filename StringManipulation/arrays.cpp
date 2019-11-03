@@ -217,7 +217,28 @@ int GetContiguousDup_n_formula(int a[], int size)
 
 int GetContiguousDup_nlogn_loop(int a[], int size)
 {
-	return 0;
+	int result = -1;
+	int start = 0;
+	int end = size - 1;
+
+	while (start < end)
+	{
+		if (a[start] == a[start + 1])
+		{
+			result = start + 1;
+			break;
+		}
+		else if (a[end] == a[end - 1])
+		{
+			result = end;
+			break;
+		}
+
+		start++;
+		end--;
+	}
+
+	return result;
 }
 
 int GetContiguousDup_nlogn_recursive(int a[], int size, int offset)

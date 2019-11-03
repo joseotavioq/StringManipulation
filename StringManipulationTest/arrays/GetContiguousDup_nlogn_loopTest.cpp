@@ -7,7 +7,7 @@ namespace StringManipulationTest
 {
 	namespace Arrays
 	{
-		TEST_CLASS(GetContiguousDup_n_formulaTest)
+		TEST_CLASS(GetContiguousDup_nlogn_loopTest)
 		{
 		public:
 
@@ -16,7 +16,7 @@ namespace StringManipulationTest
 				int A[] = { 1, 3, 4, 4, 2 };
 				int size = 5;
 
-				int duplicateIndex = GetContiguousDup_n_formula(A, size);
+				int duplicateIndex = GetContiguousDup_nlogn_loop(A, size);
 
 				Assert::AreEqual(3, duplicateIndex);
 			}
@@ -26,7 +26,7 @@ namespace StringManipulationTest
 				int A[] = { 2, 3, 1, 4, 4 };
 				int size = 5;
 
-				int duplicateIndex = GetContiguousDup_n_formula(A, size);
+				int duplicateIndex = GetContiguousDup_nlogn_loop(A, size);
 
 				Assert::AreEqual(4, duplicateIndex);
 			}
@@ -36,7 +36,7 @@ namespace StringManipulationTest
 				int A[] = { 2, 1, 1, 4 };
 				int size = 4;
 
-				int duplicateIndex = GetContiguousDup_n_formula(A, size);
+				int duplicateIndex = GetContiguousDup_nlogn_loop(A, size);
 
 				Assert::AreEqual(2, duplicateIndex);
 			}
@@ -46,7 +46,7 @@ namespace StringManipulationTest
 				int A[] = { 1, 2, 3, 4, 5 };
 				int size = 5;
 
-				int duplicateIndex = GetContiguousDup_n_formula(A, size);
+				int duplicateIndex = GetContiguousDup_nlogn_loop(A, size);
 
 				Assert::AreEqual(-1, duplicateIndex);
 			}

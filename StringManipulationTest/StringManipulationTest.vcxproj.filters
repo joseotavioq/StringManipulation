@@ -141,5 +141,8 @@
     <ClCompile Include="arrays\GetContiguousDup_n_formulaTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="arrays\GetContiguousDup_nlogn_loopTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
