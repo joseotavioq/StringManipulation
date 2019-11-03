@@ -165,6 +165,7 @@
     <ClCompile Include="arrays\CompressArrayTest.cpp" />
     <ClCompile Include="arrays\CopyArraysTest.cpp" />
     <ClCompile Include="arrays\GetContiguousDup_nlogn_loopTest.cpp" />
+    <ClCompile Include="arrays\GetContiguousDup_nlogn_recursiveTest.cpp" />
     <ClCompile Include="arrays\GetContiguousDup_n_formulaTest.cpp" />
     <ClCompile Include="arrays\GetDupTest.cpp" />
     <ClCompile Include="arrays\PrintBitsTest.cpp" />

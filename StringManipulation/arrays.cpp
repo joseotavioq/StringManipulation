@@ -243,7 +243,22 @@ int GetContiguousDup_nlogn_loop(int a[], int size)
 
 int GetContiguousDup_nlogn_recursive(int a[], int size, int offset)
 {
-	return 0;
+	if (offset >= size)
+		return -1;
+
+	int start = offset;
+	int end = size - 1;
+
+	if (a[start] == a[start + 1])
+	{
+		return start + 1;
+	}
+	else if (a[end] == a[end - 1])
+	{
+		return end;
+	}
+
+	return GetContiguousDup_nlogn_recursive(a, end, start++);
 }
 
 int GetMaxRepeatedColor(void* imageDataBuffer, unsigned size)
