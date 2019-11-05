@@ -153,11 +153,13 @@
   <ItemGroup>
     <ClCompile Include="arrays.cpp" />
     <ClCompile Include="crt.cpp" />
+    <ClCompile Include="Exercises.cpp" />
     <ClCompile Include="StringManipulation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="arrays.h" />
     <ClInclude Include="crt.h" />
+    <ClInclude Include="Exercises.h" />
     <ClInclude Include="StringManipulation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

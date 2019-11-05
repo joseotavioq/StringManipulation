@@ -101,7 +101,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>../StringManipulation/Debug/crt.obj;../StringManipulation/Debug/arrays.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../StringManipulation/Debug/crt.obj;../StringManipulation/Debug/arrays.obj;../StringManipulation/Debug/Exercises.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
