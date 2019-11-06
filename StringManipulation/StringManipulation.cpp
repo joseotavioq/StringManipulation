@@ -1,6 +1,6 @@
 #include "StringManipulation.h"
 #include <iostream>
-#include "arrays.h"
+#include "Exercises.h"
 
 int main()
 {

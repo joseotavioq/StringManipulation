@@ -205,6 +205,7 @@
     <ClCompile Include="crt\SwapCharsTest.cpp" />
     <ClCompile Include="crt\ToLowerTest.cpp" />
     <ClCompile Include="crt\ToUpperTest.cpp" />
+    <ClCompile Include="exercises\GetWrittenAmountTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StringManipulation\StringManipulation.vcxproj">
