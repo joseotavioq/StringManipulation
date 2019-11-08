@@ -50,9 +50,6 @@ it is assumed that the subvector is the empty space with sum 0.  O( n )
 */
 VectorInfo* GetMaxSumVector_n(int A[], unsigned int size);
 
-// helper function
-void PrintVector(int A[], unsigned int lowPos, unsigned int hiPos, int maxSum, bool printNegative);
-
 /******************************************************************************
 Given an array of integers with posible repeated consecutive values, compress
 the array so that no values are repeated.

@@ -117,11 +117,6 @@ VectorInfo* GetMaxSumVector_n(int A[], unsigned int size)
 	return new VectorInfo(startIndex, countOfElements - startIndex, maxSum);
 }
 
-void PrintVector(int A[], unsigned int lowPos, unsigned int hiPos, int maxSum, bool printNegative)
-{
-
-}
-
 void CompressArray(int Array[], unsigned int& size)
 {
 	int indexOfCompressed = 0;
