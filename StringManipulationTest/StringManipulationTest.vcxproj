@@ -161,6 +161,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="arrays\BoolArrayTest.cpp" />
     <ClCompile Include="arrays\CompressArrayExTest.cpp" />
     <ClCompile Include="arrays\CompressArrayTest.cpp" />
     <ClCompile Include="arrays\CopyArraysTest.cpp" />

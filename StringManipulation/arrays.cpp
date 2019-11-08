@@ -55,24 +55,24 @@ unsigned int GetBitSetCount(unsigned long reg)
 
 BoolArray::BoolArray(unsigned int size)
 {
-	m_Array = 0;
+	m_Array = new unsigned int[size] { 0 };
 	m_size = size;
 	m_bitmaps = 0;
 }
 
 void BoolArray::Set(unsigned int index)
 {
-
+	m_Array[index] = 1;
 }
 
 void BoolArray::Reset(unsigned int index)
 {
-
+	m_Array[index] = 0;
 }
 
 bool BoolArray::Get(unsigned int index)
 {
-	return true;
+	return m_Array[index];
 }
 
 VectorInfo::VectorInfo(int startIndex, int count, int sum)
