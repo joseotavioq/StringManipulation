@@ -28,9 +28,10 @@ unsigned int MaxNEPathsBad(Point point1, Point point2); // recursive sol.
 
 
 /******************************************************************************
-Print all prime numbers from 1 to a given number.  O(n) < O(m) < O(n^2).
+Return the count of prime numbers from 1 to a given number.  O(n) < O(m) < O(n^2).
 */
-void PrintPrimeNumbers(unsigned int number);
+int PrintPrimeNumbers(unsigned int number);
+bool IsPrime(int n); // helper
 
 // The Sieve of Erastothenes.
 void PrintSievePrimeNumbers(unsigned int number);

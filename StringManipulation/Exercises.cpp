@@ -162,8 +162,29 @@ unsigned int MaxNEPathsBad(Point point1, Point point2)
 	return 0;
 }
 
-void PrintPrimeNumbers(unsigned int number)
+int PrintPrimeNumbers(unsigned int number)
 {
+	int count = 0;
+
+	for (size_t i = 1; i <= number; i++)
+	{
+		if (IsPrime(i))
+			count++;
+	}
+
+	return count;
+}
+
+bool IsPrime(int n)
+{
+	if (n <= 1)
+		return false;
+
+	for (int i = 2; i < n; i++)
+		if (n % i == 0)
+			return false;
+
+	return true;
 }
 
 void PrintSievePrimeNumbers(unsigned int number)
