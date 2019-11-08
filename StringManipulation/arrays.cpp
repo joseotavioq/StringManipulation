@@ -39,7 +39,17 @@ char* PrintBits(unsigned int number)
 
 unsigned int GetBitSetCount(unsigned long reg)
 {
-	return 0;
+	unsigned int result = 0;
+
+	while (reg > 0)
+	{
+		if (reg & 1)
+			result++;
+
+		reg = reg >> 1;
+	}
+
+	return result;
 }
 
 

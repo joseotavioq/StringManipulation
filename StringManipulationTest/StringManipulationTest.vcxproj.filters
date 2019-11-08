@@ -150,5 +150,8 @@
     <ClCompile Include="exercises\GetWrittenAmountTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="arrays\GetBitSetCountTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
