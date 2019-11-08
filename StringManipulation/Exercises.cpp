@@ -147,14 +147,6 @@ const char* ConvertTenToText(int number)
 	return "";
 }
 
-void WriteCheckAmount(double amount)
-{
-}
-
-void WriteHundreds(unsigned int amount)
-{
-}
-
 unsigned int MaxPaths(Point Point1, Point Point2)
 {
 	return 0;

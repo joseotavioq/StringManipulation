@@ -9,9 +9,6 @@ ie: 1435.46  ONE THOUSAND FOUR HUNDRED THIRTY FIVE AND 46 / 100
 char* GetWrittenAmount(double amount);
 const char* ConvertNumberToText(int number);
 const char* ConvertTenToText(int number);
-void WriteCheckAmount(double amount);
-void WriteHundreds(unsigned int amount); // helper function.
-
 
 /******************************************************************************
 GetNode all possible paths from one point to another in an array of mxn where the
