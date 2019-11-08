@@ -18,12 +18,19 @@ namespace StringManipulationTest
 				Assert::AreEqual("TEN", result);
 			}
 
-			/*TEST_METHOD(Amount_Of_1435_46)
+			TEST_METHOD(Amount_Of_1435_46)
 			{
 				char* result = GetWrittenAmount(1435.46);
 
-				Assert::AreEqual("ONE THOUSAND FOUR HUNDRED THIRTY FIVE AND FOURTY SIX", result);
-			}*/
+				Assert::AreEqual("ONE THOUSAND FOUR HUNDRED THIRDY FIVE AND FOURTY SIX", result);
+			}
+
+			TEST_METHOD(Amount_Of_2791_15)
+			{
+				char* result = GetWrittenAmount(2791.15);
+
+				Assert::AreEqual("TWO THOUSAND SEVEN HUNDRED NINETY ONE AND FIFTEEN", result);
+			}
 
 			TEST_METHOD(Amount_Of_100)
 			{
@@ -46,12 +53,12 @@ namespace StringManipulationTest
 				Assert::AreEqual("TEN", result);
 			}
 
-			/*TEST_METHOD(Amount_Of_11_DECIMAL)
+			TEST_METHOD(Amount_Of_11_DECIMAL)
 			{
 				char* result = GetWrittenAmount(.11);
 
 				Assert::AreEqual("ELEVEN", result);
-			}*/
+			}
 
 			TEST_METHOD(Amount_Of_21_DECIMAL)
 			{

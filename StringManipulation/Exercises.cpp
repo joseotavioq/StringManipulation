@@ -6,15 +6,22 @@ char* GetWrittenAmount(double amount)
 {
 	char* tmp = new char[1024];
 
-	int countOfDigits = 0;
+	double onlyDecimals = amount - (int)amount;
+	amount = amount - onlyDecimals;
+
+	if (amount == 0 && onlyDecimals > 0)
+		amount = onlyDecimals;
+
+	//send all numbers to right
+	int countOfDigitsBeforePeriod = 0;
 	while (amount >= 1)
 	{
 		amount /= 10;
-		countOfDigits++;
+		countOfDigitsBeforePeriod++;
 	}
 
 	bool hasTyped = false;
-	while (amount >= 0 && countOfDigits >= -1)
+	while (amount >= 0 && countOfDigitsBeforePeriod >= -1)
 	{
 		amount *= 10;
 		int amountInt = (int)amount;
@@ -24,32 +31,29 @@ char* GetWrittenAmount(double amount)
 			const char* nameOfNumber = "";
 			const char* typeOfNumber = "";
 
-			if (countOfDigits == 4)
-			{
+			if (countOfDigitsBeforePeriod == 4
+				|| countOfDigitsBeforePeriod == 3
+				|| countOfDigitsBeforePeriod == 1
+				|| countOfDigitsBeforePeriod == -1)
 				nameOfNumber = ConvertNumberToText(amountInt);
+			else if (countOfDigitsBeforePeriod == 2 || countOfDigitsBeforePeriod == 0)
+			{
+				if (amountInt == 1)
+				{
+					amount *= 10;
+					amountInt = (int)amount;
+					countOfDigitsBeforePeriod--;
+				}
+
+				if (hasTyped && countOfDigitsBeforePeriod <= 0)
+					mystrcat(tmp, " AND");
+				nameOfNumber = ConvertTenToText(amountInt);
+			}
+
+			if (countOfDigitsBeforePeriod == 4)
 				typeOfNumber = " THOUSAND";
-			}
-			else if (countOfDigits == 3)
-			{
-				nameOfNumber = ConvertNumberToText(amountInt);
+			else if (countOfDigitsBeforePeriod == 3)
 				typeOfNumber = " HUNDRED";
-			}
-			else if (countOfDigits == 2)
-			{
-				nameOfNumber = ConvertTenToText(amountInt);
-			}
-			else if (countOfDigits == 1)
-			{
-				nameOfNumber = ConvertNumberToText(amountInt);
-			}
-			else if (countOfDigits == 0)
-			{
-				nameOfNumber = ConvertTenToText(amountInt);
-			}
-			else if (countOfDigits == -1)
-			{
-				nameOfNumber = ConvertNumberToText(amountInt);
-			}
 
 			if (!hasTyped)
 			{
@@ -62,12 +66,16 @@ char* GetWrittenAmount(double amount)
 				mystrcat(tmp, nameOfNumber);
 			}
 
-			mystrcat(tmp, typeOfNumber);
+			if (typeOfNumber != "")
+				mystrcat(tmp, typeOfNumber);
 
-			amount = amount - (int)amount;
+			if (countOfDigitsBeforePeriod == 1 && onlyDecimals > 0)
+				amount = onlyDecimals;
+			else
+				amount = amount - (int)amount;
 		}
 
-		countOfDigits--;
+		countOfDigitsBeforePeriod--;
 	}
 
 	return tmp;
@@ -99,14 +107,14 @@ const char* ConvertNumberToText(int number)
 
 const char* ConvertTenToText(int number)
 {
-	if (number == 1)
+	if (number == 1 || number == 10)
 		return "TEN";
 	else if (number == 2)
 		return "TWEENTY";
 	else if (number == 3)
 		return "THIRDY";
 	else if (number == 4)
-		return "FOURTHY";
+		return "FOURTY";
 	else if (number == 5)
 		return "FIFTY";
 	else if (number == 6)
@@ -117,6 +125,24 @@ const char* ConvertTenToText(int number)
 		return "EIGHTY";
 	else if (number == 9)
 		return "NINETY";
+	else if (number == 11)
+		return "ELEVEN";
+	else if (number == 12)
+		return "TWELVE";
+	else if (number == 13)
+		return "THIRTEEN";
+	else if (number == 14)
+		return "FOURTEEN";
+	else if (number == 15)
+		return "FIFTEEN";
+	else if (number == 16)
+		return "SIXTEEN";
+	else if (number == 17)
+		return "SEVENTEEN";
+	else if (number == 18)
+		return "EIGHTEEN";
+	else if (number == 19)
+		return "NINETEEN";
 
 	return "";
 }
