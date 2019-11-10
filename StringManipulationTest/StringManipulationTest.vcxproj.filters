@@ -159,5 +159,8 @@
     <ClCompile Include="exercises\PrintPrimeNumbersTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="exercises\PrintSievePrimeNumbersTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

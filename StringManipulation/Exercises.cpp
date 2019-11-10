@@ -166,29 +166,50 @@ int PrintPrimeNumbers(unsigned int number)
 {
 	int count = 0;
 
-	for (size_t i = 1; i <= number; i++)
+	for (size_t i = 2; i <= number; i++)
 	{
-		if (IsPrime(i))
+		bool isPrime = true;
+
+		for (size_t j = 2; j < i; j++)
+		{
+			if (i % j == 0)
+			{
+				isPrime = false;
+				break;
+			}
+		}
+
+		if (isPrime)
 			count++;
 	}
 
 	return count;
 }
 
-bool IsPrime(int n)
+int PrintSievePrimeNumbers(unsigned int number)
 {
-	if (n <= 1)
-		return false;
+	bool numbers[300];
+	mymemset(numbers, true, number);
 
-	for (int i = 2; i < n; i++)
-		if (n % i == 0)
-			return false;
+	for (int p = 2; p * p <= number; p++)
+	{
+		if (numbers[p] == true)
+		{
+			for (int i = p * p; i <= number; i += p)
+			{
+				numbers[i] = false;
+			}
+		}
+	}
 
-	return true;
-}
+	int count = 0;
+	for (size_t i = 2; i <= number; i++)
+	{
+		if (numbers[i])
+			count++;
+	}
 
-void PrintSievePrimeNumbers(unsigned int number)
-{
+	return count;
 }
 
 void HanoiMove(int size, int*& src, int*& dst, int*& tmp)

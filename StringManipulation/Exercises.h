@@ -31,10 +31,9 @@ unsigned int MaxNEPathsBad(Point point1, Point point2); // recursive sol.
 Return the count of prime numbers from 1 to a given number.  O(n) < O(m) < O(n^2).
 */
 int PrintPrimeNumbers(unsigned int number);
-bool IsPrime(int n); // helper
 
 // The Sieve of Erastothenes.
-void PrintSievePrimeNumbers(unsigned int number);
+int PrintSievePrimeNumbers(unsigned int number);
 
 /******************************************************************************
 TOWERS OF HANOI - Variation using arrays.
