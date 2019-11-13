@@ -227,7 +227,15 @@ bool** PlaceQueens(bool ChessBoard[][8])
 
 float GetClockHandlesAngle(unsigned int hours, unsigned int minutes)
 {
-	return 0.0f;
+	if (hours >= 12 && hours <= 23)
+		hours -= 12;
+	
+	float totalMinutes = (hours * 60) + minutes;
+	float angleForMinutes = 6 * minutes;
+
+	float angle = (0.5 * totalMinutes) - angleForMinutes;
+
+	return angle;
 }
 
 unsigned FindChainCuts(unsigned chainLinks)

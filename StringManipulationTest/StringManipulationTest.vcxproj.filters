@@ -165,5 +165,8 @@
     <ClCompile Include="exercises\HanoiMoveTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="exercises\GetClockHandlesAngleTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

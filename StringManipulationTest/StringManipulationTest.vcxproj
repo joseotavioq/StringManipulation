@@ -171,6 +171,7 @@
     <ClCompile Include="arrays\GetContiguousDup_n_formulaTest.cpp" />
     <ClCompile Include="arrays\GetDupTest.cpp" />
     <ClCompile Include="arrays\PrintBitsTest.cpp" />
+    <ClCompile Include="exercises\GetClockHandlesAngleTest.cpp" />
     <ClCompile Include="exercises\HanoiMoveTest.cpp" />
     <ClCompile Include="exercises\PrintPrimeNumbersTest.cpp" />
     <ClCompile Include="arrays\VectorInfoTest.cpp" />
